@@ -37,7 +37,7 @@ public class ProdCat extends javax.swing.JFrame {
         btnProduto.setBackground(new java.awt.Color(0, 0, 0));
         btnProduto.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         btnProduto.setForeground(new java.awt.Color(255, 255, 0));
-        btnProduto.setText("Produtos/Categoria");
+        btnProduto.setText("Produtos");
         btnProduto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         btnProduto.setBorderPainted(false);
         btnProduto.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -97,6 +97,9 @@ public class ProdCat extends javax.swing.JFrame {
 
     private void btnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoActionPerformed
         // TODO add your handling code here:
+        /*frmProduto x = new frmProduto();
+        x.setVisible(true);
+        this.setVisible(false);*/
     }//GEN-LAST:event_btnProdutoActionPerformed
 
     private void btnCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaActionPerformed
