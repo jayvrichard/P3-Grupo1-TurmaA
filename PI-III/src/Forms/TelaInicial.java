@@ -64,6 +64,7 @@ public class TelaInicial extends javax.swing.JFrame {
         btnProduto.setBackground(new java.awt.Color(0, 0, 0));
         btnProduto.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         btnProduto.setForeground(new java.awt.Color(255, 255, 0));
+        btnProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Comidamenor.png"))); // NOI18N
         btnProduto.setText("Produtos/Categoria");
         btnProduto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         btnProduto.setBorderPainted(false);
