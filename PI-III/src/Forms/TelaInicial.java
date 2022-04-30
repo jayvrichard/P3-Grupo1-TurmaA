@@ -64,7 +64,6 @@ public class TelaInicial extends javax.swing.JFrame {
         btnProduto.setBackground(new java.awt.Color(0, 0, 0));
         btnProduto.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         btnProduto.setForeground(new java.awt.Color(255, 255, 0));
-        btnProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Comidamenor.png"))); // NOI18N
         btnProduto.setText("Produtos/Categoria");
         btnProduto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         btnProduto.setBorderPainted(false);
@@ -236,13 +235,16 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void btnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoActionPerformed
         // TODO add your handling code here:
-        /*ProdCat x = new ProdCat();
+        ProdCat x = new ProdCat();
         x.setVisible(true);
-        this.setVisible(false);*/
+        this.setVisible(false);
     }//GEN-LAST:event_btnProdutoActionPerformed
 
     private void btnVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendaActionPerformed
         // TODO add your handling code here:
+        TelaDeCardapio x = new TelaDeCardapio();
+        x.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnVendaActionPerformed
 
     /**
