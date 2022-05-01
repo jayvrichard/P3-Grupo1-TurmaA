@@ -43,6 +43,8 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         lblPreco2 = new javax.swing.JLabel();
         lblDescricao2 = new javax.swing.JLabel();
         btnAddPedido2 = new javax.swing.JButton();
+        btnReturn = new javax.swing.JButton();
+        btnNext = new javax.swing.JButton();
         jpCardapio = new javax.swing.JPanel();
         lblCategoria5 = new javax.swing.JLabel();
         lblCategoria4 = new javax.swing.JLabel();
@@ -236,6 +238,14 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                         .addComponent(btnAddPedido2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+        btnReturn.setBackground(new java.awt.Color(255, 153, 0));
+        btnReturn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnReturn.setText("<");
+
+        btnNext.setBackground(new java.awt.Color(255, 153, 0));
+        btnNext.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnNext.setText(">");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -247,6 +257,15 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     .addComponent(jpItem3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jpItem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(1067, Short.MAX_VALUE)
+                    .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(22, 22, 22)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,7 +276,14 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addComponent(jpItem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jpItem3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
+                .addGap(39, 39, 39)
+                .addComponent(btnReturn)
+                .addGap(23, 23, 23))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(704, Short.MAX_VALUE)
+                    .addComponent(btnNext)
+                    .addGap(23, 23, 23)))
         );
 
         jpCardapio.setBackground(new java.awt.Color(51, 51, 51));
@@ -339,7 +365,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jpCardapio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         pack();
@@ -388,6 +414,8 @@ public class TelaDeCardapio extends javax.swing.JFrame {
     private javax.swing.JButton btnAddPedido1;
     private javax.swing.JButton btnAddPedido2;
     private javax.swing.JButton btnAddPedido3;
+    private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnReturn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jpCardapio;
     private javax.swing.JPanel jpItem1;
