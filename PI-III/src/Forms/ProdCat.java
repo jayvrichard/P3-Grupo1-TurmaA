@@ -104,6 +104,9 @@ public class ProdCat extends javax.swing.JFrame {
 
     private void btnCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaActionPerformed
         // TODO add your handling code here:
+        frmCategoria x = new frmCategoria();
+        x.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCategoriaActionPerformed
 
     /**
