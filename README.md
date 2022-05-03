@@ -3,9 +3,13 @@
 Integrantes do projeto:
 
 Bruno  Souza
+
 João  Vitor Ricardo
+
 Matheus Pereira  Thomé 
+
 Nathan Camargo Rodrigues
+
 Ruy Menezes
 
 Proposta do projeto:
