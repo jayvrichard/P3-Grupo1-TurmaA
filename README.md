@@ -2,12 +2,11 @@
 
 Integrantes do projeto:
 
-Natan Camargo Rodrigues 
-Matheus Pereira Thomé 
-Bruno Sousa
-João Vitor Richard 
-Ruy Menezes 
-Thalles Negreiro
+Bruno  Souza
+João  Vitor Ricardo
+Matheus Pereira  Thomé 
+Nathan Camargo Rodrigues
+Ruy Menezes
 
 Proposta do projeto:
 
