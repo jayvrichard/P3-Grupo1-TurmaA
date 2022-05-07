@@ -4,6 +4,7 @@
  */
 package Telas;
 
+import java.text.ParseException;
 import javax.swing.JPanel;
 
 /**
@@ -36,7 +37,7 @@ public class frmProduto extends javax.swing.JFrame {
         lblDescricao = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
         txtId = new javax.swing.JTextField();
         lblId = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -80,10 +81,15 @@ public class frmProduto extends javax.swing.JFrame {
         jButton3.setText("Alterar");
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jButton1.setBackground(new java.awt.Color(102, 255, 0));
-        jButton1.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        jButton1.setText("Cadastrar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrar.setBackground(new java.awt.Color(102, 255, 0));
+        btnCadastrar.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnCadastrar.setText("Cadastrar");
+        btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         txtId.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
@@ -153,7 +159,7 @@ public class frmProduto extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnCadastrar)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -188,7 +194,7 @@ public class frmProduto extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton1)
+                    .addComponent(btnCadastrar)
                     .addComponent(jButton4))
                 .addGap(52, 52, 52))
         );
@@ -305,6 +311,21 @@ public class frmProduto extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+try {
+            System.out.println(txtDescricao.getText());
+            System.out.println(txtNome.getText());
+            System.out.println(txtValor.getText().replaceAll(",", "."));
+            System.out.println(cbxCategoria.getSelectedItem());
+             Classes.Produto produto = new Classes.Produto(txtNome.getText(), cbxCategoria.getSelectedItem().toString(), Double.parseDouble(txtValor.getText().replaceAll(",", ".")), txtDescricao.getText());
+             Classes.Cadastrar cadastrar = new Classes.Cadastrar();
+             System.out.println(cadastrar.inserir(produto));
+       } catch (NullPointerException ex) {
+            System.err.println("Erro: "+ex);
+        }
+    }//GEN-LAST:event_btnCadastrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -341,9 +362,9 @@ public class frmProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JComboBox<String> cbxCategoria;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

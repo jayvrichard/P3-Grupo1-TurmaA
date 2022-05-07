@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class ConexaoBanco {
     
     private static final String Driver = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql//remotemysql.com:3306;PI3;integratedSecurity=true;";
+    private static final String URL = "jdbc:mysql://remotemysql.com:3306/WhwBtP484b";
     private static final String USER = "WhwBtP484b";
     private static final String PASS = "FAnt8f8rte";
 
@@ -19,13 +19,23 @@ public class ConexaoBanco {
         try {
 
             Class.forName(Driver);
-            return DriverManager.getConnection(URL, USER,  PASS);
+            return DriverManager.getConnection(URL, USER, PASS);
 
         } catch (ClassNotFoundException | SQLException ex) {
             throw new RuntimeException("Erro na conexão", ex);
         }
     }
+private Connection con = null;
 
+    public  void Cadastrar() {
+        
+        con = ConexaoBanco.getConnection();
+        
+    }
+
+    public static void main(String[] args) {
+        getConnection();
+    }
     public static void closeConnection(Connection con){
 
         if(con != null){
