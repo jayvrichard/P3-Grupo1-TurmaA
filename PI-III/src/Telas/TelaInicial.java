@@ -1,8 +1,10 @@
+package Telas;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Telas;
+
 
 import java.awt.Color;
 import java.awt.Image;
@@ -20,6 +22,7 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     public TelaInicial() {
         initComponents();
+
         
         //setExtendedState(MAXIMIZED_BOTH);
     }
@@ -168,7 +171,6 @@ public class TelaInicial extends javax.swing.JFrame {
         btnVenda.setBackground(new java.awt.Color(0, 0, 0));
         btnVenda.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         btnVenda.setForeground(new java.awt.Color(255, 255, 0));
-        btnVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cardapio - Copia.png"))); // NOI18N
         btnVenda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         btnVenda.setBorderPainted(false);
         btnVenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
