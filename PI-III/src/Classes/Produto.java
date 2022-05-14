@@ -9,21 +9,23 @@ package Classes;
  * @author ruy_s
  */
 public class Produto {
-    
-private int id;
-private String nome;
-private String categoria;
-private double valor;
-private String descricao;
+
+    private int id;
+    private String nome;
+    private String categoria;
+    private double valor;
+    private String descricao;
+    private boolean adicional;
 
     public Produto() {
     }
 
-    public Produto(String nome, String categoria, double valor, String descricao) {
+    public Produto(String nome, String categoria, double valor, String descricao, boolean adicional) {
         this.nome = nome;
         this.categoria = categoria;
         this.valor = valor;
         this.descricao = descricao;
+        this.adicional = adicional;
     }
 
     public int getId() {
@@ -66,5 +68,11 @@ private String descricao;
         this.descricao = descricao;
     }
 
+    public boolean isAdicional() {
+        return adicional;
+    }
 
+    public void setAdicional(boolean adicional) {
+        this.adicional = adicional;
+    }
 }
