@@ -117,14 +117,14 @@ public class ProdCat extends javax.swing.JFrame {
 
     private void btnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoActionPerformed
         // TODO add your handling code here:
-        frmProduto x = new frmProduto();
+        frmCadProduto x = new frmCadProduto();
         x.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnProdutoActionPerformed
 
     private void btnCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaActionPerformed
         // TODO add your handling code here:
-        frmCategoria x = new frmCategoria();
+        frmCadCategoria x = new frmCadCategoria();
         x.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCategoriaActionPerformed

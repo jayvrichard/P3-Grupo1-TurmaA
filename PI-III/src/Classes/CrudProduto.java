@@ -25,7 +25,7 @@ public class CrudProduto {
 
     public boolean inserir(Produto produto) {
 
-        String sql = "INSERT INTO produto (nome, valor, descricao, categoria, adicional) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO produto (nome, valor, descricao, id_categoria, adicional) VALUES (?,?,?,?,?)";
 
         PreparedStatement stmt = null;
 
@@ -34,7 +34,7 @@ public class CrudProduto {
             stmt.setString(1, produto.getNome());
             stmt.setDouble(2, produto.getValor());
             stmt.setString(3, produto.getDescricao());
-            stmt.setString(4, produto.getCategoria());
+            stmt.setInt(4, produto.getCategoria());
             stmt.setBoolean(5, produto.isAdicional());
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registrado com sucesso!");

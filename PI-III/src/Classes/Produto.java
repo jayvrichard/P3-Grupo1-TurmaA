@@ -12,7 +12,7 @@ public class Produto {
 
     private int id;
     private String nome;
-    private String categoria;
+    private int categoria;
     private double valor;
     private String descricao;
     private boolean adicional;
@@ -20,7 +20,7 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(String nome, String categoria, double valor, String descricao, boolean adicional) {
+    public Produto(String nome, int categoria, double valor, String descricao, boolean adicional) {
         this.nome = nome;
         this.categoria = categoria;
         this.valor = valor;
@@ -44,11 +44,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public String getCategoria() {
+    public int getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(int categoria) {
         this.categoria = categoria;
     }
 
