@@ -40,22 +40,19 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         lblItem1 = new javax.swing.JLabel();
         lblPreco1 = new javax.swing.JLabel();
         lblDescricao1 = new javax.swing.JLabel();
-        btnAddPedido1 = new javax.swing.JButton();
-        btnAddPedido4 = new javax.swing.JButton();
+        btnAdd1 = new javax.swing.JButton();
         jpItem3 = new javax.swing.JPanel();
         lblItem3 = new javax.swing.JLabel();
         lblPreco3 = new javax.swing.JLabel();
         lblDescricao3 = new javax.swing.JLabel();
-        btnAddPedido3 = new javax.swing.JButton();
-        btnAddPedido6 = new javax.swing.JButton();
+        btnAdd3 = new javax.swing.JButton();
         jpItem2 = new javax.swing.JPanel();
         lblItem2 = new javax.swing.JLabel();
         lblPreco2 = new javax.swing.JLabel();
         lblDescricao2 = new javax.swing.JLabel();
-        btnAddPedido2 = new javax.swing.JButton();
-        btnAddPedido5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnAdd2 = new javax.swing.JButton();
+        btnAvancaPagina = new javax.swing.JButton();
+        btnRetornaPagina = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 0));
@@ -145,25 +142,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         lblDescricao1.setForeground(new java.awt.Color(255, 255, 255));
         lblDescricao1.setText("descrição1");
 
-        btnAddPedido1.setBackground(new java.awt.Color(255, 0, 0));
-        btnAddPedido1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnAddPedido1.setText("- Remover do Pedido");
-        btnAddPedido1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddPedido1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddPedido1ActionPerformed(evt);
-            }
-        });
-
-        btnAddPedido4.setBackground(new java.awt.Color(255, 255, 0));
-        btnAddPedido4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnAddPedido4.setText("+ Adicionar ao Pedido");
-        btnAddPedido4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddPedido4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddPedido4ActionPerformed(evt);
-            }
-        });
+        btnAdd1.setBackground(new java.awt.Color(255, 165, 24));
+        btnAdd1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAdd1.setText("+Add");
+        btnAdd1.setToolTipText("");
 
         javax.swing.GroupLayout jpItem1Layout = new javax.swing.GroupLayout(jpItem1);
         jpItem1.setLayout(jpItem1Layout);
@@ -173,18 +155,15 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpItem1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblDescricao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblDescricao1, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpItem1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(lblItem1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblPreco1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPreco1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpItem1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnAddPedido4, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAddPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jpItem1Layout.setVerticalGroup(
             jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,15 +171,15 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpItem1Layout.createSequentialGroup()
-                        .addComponent(lblPreco1, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                        .addGap(72, 72, 72))
+                        .addComponent(lblPreco1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(39, 39, 39)
+                        .addComponent(btnAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))
                     .addGroup(jpItem1Layout.createSequentialGroup()
                         .addComponent(lblItem1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblDescricao1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddPedido4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblDescricao1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))))
         );
 
         jpItem3.setBackground(new java.awt.Color(51, 51, 51));
@@ -222,20 +201,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         lblDescricao3.setForeground(new java.awt.Color(255, 255, 255));
         lblDescricao3.setText("descrição3");
 
-        btnAddPedido3.setBackground(new java.awt.Color(255, 0, 0));
-        btnAddPedido3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnAddPedido3.setText("- Remover do Pedido");
-        btnAddPedido3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnAddPedido6.setBackground(new java.awt.Color(255, 255, 0));
-        btnAddPedido6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnAddPedido6.setText("+ Adicionar ao Pedido");
-        btnAddPedido6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddPedido6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddPedido6ActionPerformed(evt);
-            }
-        });
+        btnAdd3.setBackground(new java.awt.Color(255, 165, 24));
+        btnAdd3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAdd3.setText("+Add");
+        btnAdd3.setToolTipText("");
 
         javax.swing.GroupLayout jpItem3Layout = new javax.swing.GroupLayout(jpItem3);
         jpItem3.setLayout(jpItem3Layout);
@@ -245,19 +214,15 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addGroup(jpItem3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpItem3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblDescricao3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblDescricao3, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpItem3Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(lblItem3, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpItem3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpItem3Layout.createSequentialGroup()
-                        .addComponent(lblPreco3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpItem3Layout.createSequentialGroup()
-                        .addComponent(btnAddPedido6, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAddPedido3, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(lblPreco3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jpItem3Layout.setVerticalGroup(
             jpItem3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,14 +232,12 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     .addGroup(jpItem3Layout.createSequentialGroup()
                         .addComponent(lblItem3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(lblDescricao3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addComponent(lblDescricao3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpItem3Layout.createSequentialGroup()
                         .addComponent(lblPreco3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(51, 51, 51)
-                        .addGroup(jpItem3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAddPedido3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAddPedido6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(33, 33, 33)
+                        .addComponent(btnAdd3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         jpItem2.setBackground(new java.awt.Color(51, 51, 51));
@@ -296,20 +259,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         lblDescricao2.setForeground(new java.awt.Color(255, 255, 255));
         lblDescricao2.setText("descrição2");
 
-        btnAddPedido2.setBackground(new java.awt.Color(255, 0, 0));
-        btnAddPedido2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnAddPedido2.setText("- Remover do Pedido");
-        btnAddPedido2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnAddPedido5.setBackground(new java.awt.Color(255, 255, 0));
-        btnAddPedido5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnAddPedido5.setText("+ Adicionar ao Pedido");
-        btnAddPedido5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddPedido5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddPedido5ActionPerformed(evt);
-            }
-        });
+        btnAdd2.setBackground(new java.awt.Color(255, 165, 24));
+        btnAdd2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAdd2.setText("+Add");
+        btnAdd2.setToolTipText("");
 
         javax.swing.GroupLayout jpItem2Layout = new javax.swing.GroupLayout(jpItem2);
         jpItem2.setLayout(jpItem2Layout);
@@ -319,19 +272,15 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addGroup(jpItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpItem2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblDescricao2, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE))
+                        .addComponent(lblDescricao2, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpItem2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(lblItem2, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addGroup(jpItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpItem2Layout.createSequentialGroup()
-                        .addComponent(lblPreco2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpItem2Layout.createSequentialGroup()
-                        .addComponent(btnAddPedido5, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAddPedido2, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(lblPreco2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jpItem2Layout.setVerticalGroup(
             jpItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,34 +289,32 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addGroup(jpItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpItem2Layout.createSequentialGroup()
                         .addComponent(lblItem2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(lblDescricao2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addComponent(lblDescricao2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpItem2Layout.createSequentialGroup()
                         .addComponent(lblPreco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(51, 51, 51)
-                        .addGroup(jpItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAddPedido2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAddPedido5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(33, 33, 33)
+                        .addComponent(btnAdd2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
-        jButton4.setBackground(new java.awt.Color(255, 102, 0));
-        jButton4.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        jButton4.setText("Retornar");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnAvancaPagina.setBackground(new java.awt.Color(255, 165, 24));
+        btnAvancaPagina.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnAvancaPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/avanca_mini.png"))); // NOI18N
+        btnAvancaPagina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAvancaPagina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnAvancaPaginaActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(102, 255, 0));
-        jButton5.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        jButton5.setText("Avançar ");
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnRetornaPagina.setBackground(new java.awt.Color(255, 165, 24));
+        btnRetornaPagina.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnRetornaPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/retorna_mini.png"))); // NOI18N
+        btnRetornaPagina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRetornaPagina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnRetornaPaginaActionPerformed(evt);
             }
         });
 
@@ -383,25 +330,25 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     .addComponent(jpItem1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5)))
+                        .addComponent(btnRetornaPagina, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAvancaPagina, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jpItem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addGap(96, 96, 96)
+                .addComponent(jpItem1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
                 .addComponent(jpItem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(jpItem3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
-                .addGap(24, 24, 24))
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAvancaPagina, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRetornaPagina, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -444,34 +391,16 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPedido1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddPedido1ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnAvancaPaginaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancaPaginaActionPerformed
         // TODO add your handling code here:
         PersProdAd x = new PersProdAd();
         x.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnAvancaPaginaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        TelaInicial x = new TelaInicial();
-        x.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void btnAddPedido4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPedido4ActionPerformed
+    private void btnRetornaPaginaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornaPaginaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddPedido4ActionPerformed
-
-    private void btnAddPedido5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPedido5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddPedido5ActionPerformed
-
-    private void btnAddPedido6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPedido6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddPedido6ActionPerformed
+    }//GEN-LAST:event_btnRetornaPaginaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -509,14 +438,11 @@ public class TelaDeCardapio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddPedido1;
-    private javax.swing.JButton btnAddPedido2;
-    private javax.swing.JButton btnAddPedido3;
-    private javax.swing.JButton btnAddPedido4;
-    private javax.swing.JButton btnAddPedido5;
-    private javax.swing.JButton btnAddPedido6;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnAdd1;
+    private javax.swing.JButton btnAdd2;
+    private javax.swing.JButton btnAdd3;
+    private javax.swing.JButton btnAvancaPagina;
+    private javax.swing.JButton btnRetornaPagina;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jpCardapio;
