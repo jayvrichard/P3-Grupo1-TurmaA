@@ -37,6 +37,25 @@ public class frmCadCategoria extends javax.swing.JFrame {
         }
     }
 
+    public void ListarDesc(String desc) {
+        DefaultTableModel modelo = (DefaultTableModel) jtbCategoria.getModel();
+        modelo.setNumRows(0);
+        CrudCategoria lista = new CrudCategoria();
+
+        for (Categoria l : lista.mostrarDesc(desc)) {
+
+            modelo.addRow(new Object[]{
+                l.getId(),
+                l.getNome()
+            });
+        }
+    }
+
+    public void Limpar() {
+        txtId.setText("");
+        txtNome.setText("");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -103,6 +122,7 @@ public class frmCadCategoria extends javax.swing.JFrame {
             }
         });
 
+        txtId.setEditable(false);
         txtId.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         lblId.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -138,7 +158,7 @@ public class frmCadCategoria extends javax.swing.JFrame {
                         .addGap(113, 113, 113)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lblId)
+                                .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -150,7 +170,7 @@ public class frmCadCategoria extends javax.swing.JFrame {
                             .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
                             .addComponent(btnAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,6 +216,11 @@ public class frmCadCategoria extends javax.swing.JFrame {
             }
         });
         jtbCategoria.setToolTipText("");
+        jtbCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtbCategoriaMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jtbCategoria);
 
         lblPesquisar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -208,6 +233,11 @@ public class frmCadCategoria extends javax.swing.JFrame {
         btnPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -298,7 +328,8 @@ public class frmCadCategoria extends javax.swing.JFrame {
         } catch (NullPointerException ex) {
             System.err.println("Erro: " + ex);
         }
-Listar();
+        Listar();
+        Limpar();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
@@ -314,11 +345,12 @@ Listar();
             System.err.println("Erro: " + ex);
         }
         Listar();
+        Limpar();
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
-try {
+        try {
 
             System.out.println(txtId.getText());
             System.out.println(txtNome.getText());
@@ -329,7 +361,21 @@ try {
             System.err.println("Erro: " + ex);
         }
         Listar();
+        Limpar();
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        // TODO add your handling code here:
+        ListarDesc(txtPesquisar.getText());
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void jtbCategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbCategoriaMouseClicked
+        // TODO add your handling code here:
+        Limpar();
+        txtId.setText(jtbCategoria.getValueAt(jtbCategoria.getSelectedRow(), 0).toString());
+        txtNome.setText(jtbCategoria.getValueAt(jtbCategoria.getSelectedRow(), 1).toString());
+
+    }//GEN-LAST:event_jtbCategoriaMouseClicked
 
     /**
      * @param args the command line arguments

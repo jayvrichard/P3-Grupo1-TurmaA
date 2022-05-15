@@ -113,4 +113,33 @@ public class CrudCategoria {
             ConexaoBanco.closeConnection(con, stmt);
         }
     }
+
+    public List<Categoria> mostrarDesc(String desc) {
+
+        Connection con = ConexaoBanco.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Categoria> categorias = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM categoria WHERE nome LIKE ? OR id LIKE ?");
+            stmt.setString(1, "%" + desc + "%");
+            stmt.setString(2, "%" + desc + "%");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+
+                Categoria categoria = new Categoria();
+
+                categoria.setId(rs.getInt("id"));
+                categoria.setNome(rs.getString("nome"));
+                categorias.add(categoria);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error: " + ex);
+        } finally {
+            ConexaoBanco.closeConnection(con, stmt, rs);
+        }
+
+        return categorias;
+    }
 }
