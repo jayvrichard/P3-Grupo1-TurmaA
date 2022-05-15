@@ -311,7 +311,7 @@ public class frmCadProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        ProdCat x = new ProdCat();
+        FrmProdCat x = new FrmProdCat();
         x.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed

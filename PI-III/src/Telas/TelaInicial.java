@@ -243,7 +243,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void btnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoActionPerformed
         // TODO add your handling code here:
-        ProdCat x = new ProdCat();
+        FrmProdCat x = new FrmProdCat();
         x.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnProdutoActionPerformed
