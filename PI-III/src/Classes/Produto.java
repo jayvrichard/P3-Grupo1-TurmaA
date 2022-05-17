@@ -20,6 +20,10 @@ public class Produto {
     public Produto() {
     }
 
+    public Produto(int id) {
+        this.id = id;
+    }
+
     public Produto(String nome, int categoria, double valor, String descricao, boolean adicional) {
         this.nome = nome;
         this.categoria = categoria;
@@ -27,6 +31,16 @@ public class Produto {
         this.descricao = descricao;
         this.adicional = adicional;
     }
+
+    public Produto(int id, String nome, int categoria, double valor, String descricao, boolean adicional) {
+        this.id = id;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.valor = valor;
+        this.descricao = descricao;
+        this.adicional = adicional;
+    }
+
 
     public int getId() {
         return id;

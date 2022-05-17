@@ -4,8 +4,11 @@
  */
 package Telas;
 
+import Classes.CrudProduto;
+import Classes.Produto;
 import java.text.ParseException;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +21,47 @@ public class frmCadProduto extends javax.swing.JFrame {
      */
     public frmCadProduto() {
         initComponents();
+        Listar();
+    }
+
+    public void Listar() {
+        DefaultTableModel modelo = (DefaultTableModel) jtbProduto.getModel();
+        modelo.setNumRows(0);
+        CrudProduto lista = new CrudProduto();
+
+        for (Produto l : lista.mostrar()) {
+
+            modelo.addRow(new Object[]{
+                l.getId(),
+                l.getNome(),
+                l.getCategoria(),
+                l.getValor()
+            });
+        }
+    }
+
+    public void ListarDesc(String desc) {
+        DefaultTableModel modelo = (DefaultTableModel) jtbProduto.getModel();
+        modelo.setNumRows(0);
+        CrudProduto lista = new CrudProduto();
+
+        for (Produto l : lista.mostrarDesc(desc)) {
+
+            modelo.addRow(new Object[]{
+                l.getId(),
+                l.getNome(),
+                l.getCategoria(),
+                l.getValor()
+            });
+        }
+    }
+
+    public void Limpar() {
+        txtId.setText("");
+        txtNome.setText("");
+        txtDescricao.setText("");
+        txtValor.setText("");
+        cbxCategoria.setSelectedIndex(0);
     }
 
     /**
@@ -35,8 +79,8 @@ public class frmCadProduto extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescricao = new javax.swing.JTextArea();
         lblDescricao = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
         btnCadastrar = new javax.swing.JButton();
         txtId = new javax.swing.JTextField();
         lblId = new javax.swing.JLabel();
@@ -46,11 +90,11 @@ public class frmCadProduto extends javax.swing.JFrame {
         cbxCategoria = new javax.swing.JComboBox<>();
         lblValor = new javax.swing.JLabel();
         txtValor = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        btnRetorno = new javax.swing.JButton();
         chxAdicional = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtbProduto = new javax.swing.JTable();
         lblPesquisar = new javax.swing.JLabel();
         txtPesquisar = new javax.swing.JTextField();
         btnPesquisar = new javax.swing.JButton();
@@ -72,15 +116,25 @@ public class frmCadProduto extends javax.swing.JFrame {
         lblDescricao.setForeground(new java.awt.Color(255, 255, 255));
         lblDescricao.setText("Descrição:");
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
-        jButton2.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        jButton2.setText("Excluir");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnExcluir.setBackground(new java.awt.Color(255, 0, 0));
+        btnExcluir.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 0));
-        jButton3.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        jButton3.setText("Alterar");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAlterar.setBackground(new java.awt.Color(255, 255, 0));
+        btnAlterar.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnAlterar.setText("Alterar");
+        btnAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
 
         btnCadastrar.setBackground(new java.awt.Color(102, 255, 0));
         btnCadastrar.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
@@ -117,13 +171,13 @@ public class frmCadProduto extends javax.swing.JFrame {
 
         txtValor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        jButton4.setBackground(new java.awt.Color(255, 102, 0));
-        jButton4.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        jButton4.setText("Retornar");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRetorno.setBackground(new java.awt.Color(255, 102, 0));
+        btnRetorno.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnRetorno.setText("Retornar");
+        btnRetorno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRetorno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRetornoActionPerformed(evt);
             }
         });
 
@@ -160,14 +214,14 @@ public class frmCadProduto extends javax.swing.JFrame {
                         .addGap(88, 88, 88)
                         .addComponent(lblCategoria))
                     .addComponent(btnCadastrar)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cbxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRetorno, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -192,21 +246,21 @@ public class frmCadProduto extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnCadastrar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(btnAlterar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2))
+                        .addComponent(btnExcluir))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblDescricao)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                 .addGap(45, 45, 45)
-                .addComponent(jButton4)
+                .addComponent(btnRetorno)
                 .addGap(14, 14, 14))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtbProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -222,7 +276,7 @@ public class frmCadProduto extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jtbProduto);
 
         lblPesquisar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblPesquisar.setForeground(new java.awt.Color(255, 255, 255));
@@ -310,11 +364,11 @@ public class frmCadProduto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnRetornoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornoActionPerformed
         FrmProdCat x = new FrmProdCat();
         x.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnRetornoActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
@@ -324,13 +378,49 @@ public class frmCadProduto extends javax.swing.JFrame {
             System.out.println(txtValor.getText().replaceAll(",", "."));
             System.out.println(cbxCategoria.getSelectedItem());
             System.out.println(chxAdicional.isSelected());
-            Classes.Produto produto = new Classes.Produto(txtNome.getText(), cbxCategoria.getSelectedIndex(), Double.parseDouble(txtValor.getText().replaceAll(",", ".")), txtDescricao.getText(), chxAdicional.isSelected());
+            Classes.Produto produto = new Classes.Produto(txtNome.getText(), cbxCategoria.getSelectedIndex()+1, Double.parseDouble(txtValor.getText().replaceAll(",", ".")), txtDescricao.getText(), chxAdicional.isSelected());
             Classes.CrudProduto cadastrar = new Classes.CrudProduto();
             System.out.println(cadastrar.inserir(produto));
         } catch (NullPointerException ex) {
             System.err.println("Erro: " + ex);
         }
+        Listar();
+        Limpar();
     }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        // TODO add your handling code here:
+        try {
+
+            System.out.println(txtId.getText());
+            System.out.println(txtNome.getText());
+            Classes.Produto produto = new Classes.Produto(Integer.parseInt(txtId.getText()), txtNome.getText(), cbxCategoria.getSelectedIndex()+1, Double.parseDouble(txtValor.getText()), txtDescricao.getText(), chxAdicional.isSelected());
+            Classes.CrudProduto alterar = new Classes.CrudProduto();
+            System.out.println(alterar.editar(produto));
+        } catch (NullPointerException ex) {
+            System.err.println("Erro: " + ex);
+        }
+        Listar();
+        Limpar();
+    }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+        try {
+
+            System.out.println(txtId.getText());
+            System.out.println(txtNome.getText());
+            System.out.println(txtDescricao.getText());
+            System.out.println(txtValor.getText());
+            Classes.Produto produto = new Classes.Produto(Integer.parseInt(txtId.getText()));
+            Classes.CrudProduto excluir = new Classes.CrudProduto();
+            System.out.println(excluir.excluir(produto));
+        } catch (NullPointerException ex) {
+            System.err.println("Erro: " + ex);
+        }
+        Listar();
+        Limpar();
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,19 +459,19 @@ public class frmCadProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton btnRetorno;
     private javax.swing.JComboBox<String> cbxCategoria;
     private javax.swing.JCheckBox chxAdicional;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jtbProduto;
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lblCategoria;
     private javax.swing.JLabel lblDescricao;
