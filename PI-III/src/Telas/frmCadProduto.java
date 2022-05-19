@@ -23,14 +23,14 @@ public class frmCadProduto extends javax.swing.JFrame {
         initComponents();
         Listar();
     }
-    
+
     public void Listar() {
         DefaultTableModel modelo = (DefaultTableModel) jtbProduto.getModel();
         modelo.setNumRows(0);
         CrudProduto lista = new CrudProduto();
-        
+
         for (Produto l : lista.mostrar()) {
-            
+
             modelo.addRow(new Object[]{
                 l.getId(),
                 l.getNome(),
@@ -41,12 +41,12 @@ public class frmCadProduto extends javax.swing.JFrame {
             });
         }
     }
-    
+
     public void ListarDesc(String desc) {
         DefaultTableModel modelo = (DefaultTableModel) jtbProduto.getModel();
         modelo.setNumRows(0);
         CrudProduto lista = new CrudProduto();
-        
+
         for (Produto l : lista.mostrarDesc(desc)) {
             modelo.addRow(new Object[]{
                 l.getId(),
@@ -58,7 +58,7 @@ public class frmCadProduto extends javax.swing.JFrame {
             });
         }
     }
-    
+
     public void Limpar() {
         txtId.setText("");
         txtNome.setText("");
@@ -291,11 +291,21 @@ public class frmCadProduto extends javax.swing.JFrame {
         lblPesquisar.setText("Pesquisar:");
 
         txtPesquisar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPesquisarActionPerformed(evt);
+            }
+        });
 
         btnPesquisar.setBackground(new java.awt.Color(51, 102, 255));
         btnPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -399,7 +409,7 @@ public class frmCadProduto extends javax.swing.JFrame {
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
         try {
-            
+
             System.out.println(txtId.getText());
             System.out.println(txtNome.getText());
             Classes.Produto produto = new Classes.Produto(Integer.parseInt(txtId.getText()), txtNome.getText(), cbxCategoria.getSelectedIndex() + 1, Double.parseDouble(txtValor.getText()), txtDescricao.getText(), chxAdicional.isSelected());
@@ -415,7 +425,7 @@ public class frmCadProduto extends javax.swing.JFrame {
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
         try {
-            
+
             System.out.println(txtId.getText());
             System.out.println(txtNome.getText());
             System.out.println(txtDescricao.getText());
@@ -451,11 +461,21 @@ public class frmCadProduto extends javax.swing.JFrame {
          */
         txtId.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 0).toString());
         txtNome.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 1).toString());
-        cbxCategoria.setSelectedIndex(Integer.parseInt(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 2).toString())-1);
+        cbxCategoria.setSelectedIndex(Integer.parseInt(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 2).toString()) - 1);
         txtValor.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 3).toString());
         txtDescricao.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 4).toString());
         chxAdicional.setSelected(t);
     }//GEN-LAST:event_jtbProdutoMouseClicked
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        // TODO add your handling code here:
+        ListarDesc(txtPesquisar.getText());
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed
+        // TODO add your handling code here:
+        ListarDesc(txtPesquisar.getText());
+    }//GEN-LAST:event_txtPesquisarActionPerformed
 
     /**
      * @param args the command line arguments

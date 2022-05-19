@@ -228,6 +228,11 @@ public class frmCadCategoria extends javax.swing.JFrame {
         lblPesquisar.setText("Pesquisar:");
 
         txtPesquisar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPesquisarActionPerformed(evt);
+            }
+        });
 
         btnPesquisar.setBackground(new java.awt.Color(51, 102, 255));
         btnPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -376,6 +381,11 @@ public class frmCadCategoria extends javax.swing.JFrame {
         txtNome.setText(jtbCategoria.getValueAt(jtbCategoria.getSelectedRow(), 1).toString());
 
     }//GEN-LAST:event_jtbCategoriaMouseClicked
+
+    private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed
+        // TODO add your handling code here:
+        ListarDesc(txtPesquisar.getText());
+    }//GEN-LAST:event_txtPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
