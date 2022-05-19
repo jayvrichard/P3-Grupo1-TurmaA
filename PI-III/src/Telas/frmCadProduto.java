@@ -23,39 +23,42 @@ public class frmCadProduto extends javax.swing.JFrame {
         initComponents();
         Listar();
     }
-
+    
     public void Listar() {
         DefaultTableModel modelo = (DefaultTableModel) jtbProduto.getModel();
         modelo.setNumRows(0);
         CrudProduto lista = new CrudProduto();
-
+        
         for (Produto l : lista.mostrar()) {
-
+            
             modelo.addRow(new Object[]{
                 l.getId(),
                 l.getNome(),
                 l.getCategoria(),
-                l.getValor()
+                l.getValor(),
+                l.getDescricao(),
+                l.isAdicional()
             });
         }
     }
-
+    
     public void ListarDesc(String desc) {
         DefaultTableModel modelo = (DefaultTableModel) jtbProduto.getModel();
         modelo.setNumRows(0);
         CrudProduto lista = new CrudProduto();
-
+        
         for (Produto l : lista.mostrarDesc(desc)) {
-
             modelo.addRow(new Object[]{
                 l.getId(),
                 l.getNome(),
                 l.getCategoria(),
-                l.getValor()
+                l.getValor(),
+                l.getDescricao(),
+                l.isAdicional()
             });
         }
     }
-
+    
     public void Limpar() {
         txtId.setText("");
         txtNome.setText("");
@@ -265,15 +268,20 @@ public class frmCadProduto extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "Categoria", "Valor"
+                "ID", "Nome", "Categoria", "Valor", "Descrição", "Adicional"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jtbProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtbProdutoMouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(jtbProduto);
@@ -378,7 +386,7 @@ public class frmCadProduto extends javax.swing.JFrame {
             System.out.println(txtValor.getText().replaceAll(",", "."));
             System.out.println(cbxCategoria.getSelectedItem());
             System.out.println(chxAdicional.isSelected());
-            Classes.Produto produto = new Classes.Produto(txtNome.getText(), cbxCategoria.getSelectedIndex()+1, Double.parseDouble(txtValor.getText().replaceAll(",", ".")), txtDescricao.getText(), chxAdicional.isSelected());
+            Classes.Produto produto = new Classes.Produto(txtNome.getText(), cbxCategoria.getSelectedIndex() + 1, Double.parseDouble(txtValor.getText().replaceAll(",", ".")), txtDescricao.getText(), chxAdicional.isSelected());
             Classes.CrudProduto cadastrar = new Classes.CrudProduto();
             System.out.println(cadastrar.inserir(produto));
         } catch (NullPointerException ex) {
@@ -391,10 +399,10 @@ public class frmCadProduto extends javax.swing.JFrame {
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
         try {
-
+            
             System.out.println(txtId.getText());
             System.out.println(txtNome.getText());
-            Classes.Produto produto = new Classes.Produto(Integer.parseInt(txtId.getText()), txtNome.getText(), cbxCategoria.getSelectedIndex()+1, Double.parseDouble(txtValor.getText()), txtDescricao.getText(), chxAdicional.isSelected());
+            Classes.Produto produto = new Classes.Produto(Integer.parseInt(txtId.getText()), txtNome.getText(), cbxCategoria.getSelectedIndex() + 1, Double.parseDouble(txtValor.getText()), txtDescricao.getText(), chxAdicional.isSelected());
             Classes.CrudProduto alterar = new Classes.CrudProduto();
             System.out.println(alterar.editar(produto));
         } catch (NullPointerException ex) {
@@ -407,7 +415,7 @@ public class frmCadProduto extends javax.swing.JFrame {
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
         try {
-
+            
             System.out.println(txtId.getText());
             System.out.println(txtNome.getText());
             System.out.println(txtDescricao.getText());
@@ -421,6 +429,33 @@ public class frmCadProduto extends javax.swing.JFrame {
         Listar();
         Limpar();
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void jtbProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbProdutoMouseClicked
+        // TODO add your handling code here:
+        Limpar();
+        boolean t = true;
+        String texto = jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 5).toString();
+        if (texto.equalsIgnoreCase("true")) {
+            t = true;
+        } else {
+            t = false;
+        }
+        /*texto = jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 2).toString();
+        int count = 0;
+        cbxCategoria.setSelectedIndex(0);
+        do {
+            if (cbxCategoria.getSelectedItem() != texto) {
+                cbxCategoria.setSelectedIndex(cbxCategoria.getSelectedIndex()+1);
+            }
+        } while (cbxCategoria.getSelectedItem().equals(texto));
+         */
+        txtId.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 0).toString());
+        txtNome.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 1).toString());
+        cbxCategoria.setSelectedIndex(Integer.parseInt(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 2).toString())-1);
+        txtValor.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 3).toString());
+        txtDescricao.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 4).toString());
+        chxAdicional.setSelected(t);
+    }//GEN-LAST:event_jtbProdutoMouseClicked
 
     /**
      * @param args the command line arguments
