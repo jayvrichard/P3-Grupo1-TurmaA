@@ -161,7 +161,7 @@ public class CrudProduto {
         return produtos;
     }
 
-    public List<Produto> mostrarProd(int cat, int id) {
+    public List<Produto> mostrarProd(int cat, int id, int idm) {
 
         Connection con = ConexaoBanco.getConnection();
         PreparedStatement stmt = null;
@@ -169,9 +169,10 @@ public class CrudProduto {
 
         List<Produto> produtos = new ArrayList<>();
         try {
-            stmt = con.prepareStatement("SELECT * FROM produto WHERE id_categoria = ? AND id >= ?");
-            stmt.setInt(1,cat);
-            stmt.setInt(2,id);
+            stmt = con.prepareStatement("SELECT * FROM produto WHERE id_categoria = ? AND id >= ? AND id <= ?");
+            stmt.setInt(1, cat);
+            stmt.setInt(2, id);
+            stmt.setInt(3, idm);
             rs = stmt.executeQuery();
             while (rs.next()) {
 

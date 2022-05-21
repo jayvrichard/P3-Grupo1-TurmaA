@@ -9,6 +9,8 @@ import Classes.Categoria;
 import Classes.CrudCategoria;
 import Classes.CrudProduto;
 import Classes.Produto;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -23,10 +25,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         initComponents();
         listarCategoria();
 
-        listarProduto(countcat, countProd);
+        listarProduto(countcat, countProdMenor, countProdMaior);
     }
 
-    private int countcat = 1, countProd = 1;
+    private int countcat = 1, countProdMenor = 1, countProdMaior = 100;
 
     public void listarCategoria() {
         int count = 1;
@@ -69,33 +71,45 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         }
     }
 
-    public void listarProduto(int x, int y) {
+    public void listarProduto(int x, int y, int z) {
         int count = 1;
         CrudProduto lista = new CrudProduto();
 
-        for (Produto l : lista.mostrarProd(x, y)) {
+        for (Produto l : lista.mostrarProd(x, y, z)) {
             switch (count) {
                 case 1:
                     lblItem1.setText(l.getNome());
                     lblPreco1.setText(String.valueOf(l.getValor()));
                     lblDescricao1.setText(l.getDescricao());
-                    countProd = l.getId();
+                    countProdMenor = l.getId();
                     break;
                 case 2:
                     lblItem2.setText(l.getNome());
                     lblPreco2.setText(String.valueOf(l.getValor()));
                     lblDescricao2.setText(l.getDescricao());
-                    countProd = l.getId();
+                    countProdMaior = l.getId();
                     break;
                 case 3:
                     lblItem3.setText(l.getNome());
                     lblPreco3.setText(String.valueOf(l.getValor()));
                     lblDescricao3.setText(l.getDescricao());
-                    countProd = l.getId();
+                    countProdMaior = l.getId();
                     break;
             }
             count++;
         }
+    }
+
+    public void limparItens() {
+        lblItem1.setText("");
+        lblPreco1.setText("");
+        lblDescricao1.setText("");
+        lblItem2.setText("");
+        lblPreco2.setText("");
+        lblDescricao2.setText("");
+        lblItem3.setText("");
+        lblPreco3.setText("");
+        lblDescricao3.setText("");
     }
 
     /**
@@ -728,20 +742,26 @@ public class TelaDeCardapio extends javax.swing.JFrame {
 
     private void btnAvancaPaginaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancaPaginaActionPerformed
         // TODO add your handling code here:
-        PersProdAd x = new PersProdAd();
-        x.setVisible(true);
-        this.setVisible(false);
+        countProdMenor = countProdMaior + 1;
+        countProdMaior += 100;
+        limparItens();
+        listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_btnAvancaPaginaActionPerformed
 
     private void btnRetornaPaginaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornaPaginaActionPerformed
         // TODO add your handling code here:
+        countProdMenor = 1;
+        countProdMaior = 100;
+        limparItens();
+        listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_btnRetornaPaginaActionPerformed
 
     private void lblCategoria1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCategoria1MouseClicked
         // TODO add your handling code here:
         countcat = 1;
-        countProd = 1;
-        listarProduto(countcat, countProd);
+        countProdMenor = 1;
+        countProdMaior = 100;
+        listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria1MouseClicked
 
     private void btnRetornoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornoActionPerformed
@@ -757,8 +777,9 @@ public class TelaDeCardapio extends javax.swing.JFrame {
     private void lblCategoria2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCategoria2MouseClicked
         // TODO add your handling code here:
         countcat = 2;
-        countProd = 2;
-        listarProduto(countcat, countProd);
+        countProdMenor = 1;
+        countProdMaior = 100;
+        listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria2MouseClicked
 
     private void lblCategoria3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCategoria3MouseClicked
