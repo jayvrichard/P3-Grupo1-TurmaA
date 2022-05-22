@@ -256,7 +256,9 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVendaActionPerformed
 
     private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed
-        // TODO add your handling code here:
+        TelaRelatorio tela = new TelaRelatorio();
+        tela.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnRelatorioActionPerformed
 
     /**
