@@ -194,4 +194,36 @@ public class CrudProduto {
 
         return produtos;
     }
+
+    public List<Produto> mostrarItem(int id) {
+
+        Connection con = ConexaoBanco.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Produto> produtos = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM produto WHERE id = ?");
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+
+                Produto produto = new Produto();
+
+                produto.setId(rs.getInt("id"));
+                produto.setNome(rs.getString("nome"));
+                produto.setCategoria(rs.getInt("id_categoria"));
+                produto.setValor(rs.getDouble("valor"));
+                produto.setDescricao(rs.getString("descricao"));
+                produto.setAdicional(rs.getBoolean("adicional"));
+                produtos.add(produto);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error: " + ex);
+        } finally {
+            ConexaoBanco.closeConnection(con, stmt, rs);
+        }
+
+        return produtos;
+    }
 }
