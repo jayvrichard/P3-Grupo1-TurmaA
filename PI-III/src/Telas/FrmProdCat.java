@@ -155,6 +155,9 @@ public class FrmProdCat extends javax.swing.JFrame {
 
     private void btnAdicioniasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicioniasActionPerformed
         // TODO add your handling code here:
+        frmCadAdicional x = new frmCadAdicional();
+        x.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAdicioniasActionPerformed
 
     /**
