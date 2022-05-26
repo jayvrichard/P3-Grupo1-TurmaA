@@ -42,6 +42,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
     }
 
     private int countcat = 1, countProdMenor = 1, countProdMaior = 100;
+    private boolean adicional1, adicional2, adicional3;
     public static ArrayList<Integer> produto = new ArrayList();
 
     public void listarCategoria() {
@@ -108,6 +109,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     lblDescricao1.setText(l.getDescricao());
                     lblId1.setText(String.valueOf(l.getId()));
                     btnAdd1.setVisible(true);
+                    adicional1 = l.isAdicional();
                     countProdMenor = l.getId();
                     break;
                 case 2:
@@ -116,6 +118,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     lblDescricao2.setText(l.getDescricao());
                     lblId2.setText(String.valueOf(l.getId()));
                     btnAdd2.setVisible(true);
+                    adicional2 = l.isAdicional();
                     countProdMaior = l.getId();
                     break;
                 case 3:
@@ -124,6 +127,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     lblDescricao3.setText(l.getDescricao());
                     lblId3.setText(String.valueOf(l.getId()));
                     btnAdd3.setVisible(true);
+                    adicional3 = l.isAdicional();
                     countProdMaior = l.getId();
                     break;
             }
@@ -147,6 +151,9 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         btnAdd1.setVisible(false);
         btnAdd2.setVisible(false);
         btnAdd3.setVisible(false);
+        adicional1 = false;
+        adicional2 = false;
+        adicional3 = false;
     }
 
     /**
@@ -542,6 +549,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         btnAdd1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnAdd1.setText("+Add");
         btnAdd1.setToolTipText("");
+        btnAdd1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdd1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdd1ActionPerformed(evt);
@@ -613,6 +621,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         btnAdd3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnAdd3.setText("+Add");
         btnAdd3.setToolTipText("");
+        btnAdd3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdd3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdd3ActionPerformed(evt);
@@ -683,6 +692,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         btnAdd2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnAdd2.setText("+Add");
         btnAdd2.setToolTipText("");
+        btnAdd2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdd2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdd2ActionPerformed(evt);
@@ -718,13 +728,12 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             .addGroup(jpItem2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpItem2Layout.createSequentialGroup()
-                        .addComponent(lblItem2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 19, Short.MAX_VALUE))
                     .addComponent(lblPreco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jpItem2Layout.createSequentialGroup()
-                        .addComponent(lblId2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(jpItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblItem2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblId2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 19, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnAdd2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -926,28 +935,81 @@ public class TelaDeCardapio extends javax.swing.JFrame {
 
     private void btnAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
         // TODO add your handling code here:
-        produto.add(Integer.parseInt(lblId1.getText()));
-        TelaAddRemIngrediente x = new TelaAddRemIngrediente();
-        x.setVisible(true);
-        this.dispose();
+        if (adicional1 == true) {
+            produto.add(Integer.parseInt(lblId1.getText()));
+            TelaAddRemIngrediente x = new TelaAddRemIngrediente();
+            x.setVisible(true);
+            this.dispose();
+        } else {
+            Object[] options = {"Sim", "Não"};
+            int op = 0;
+            op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+            if (op == 0) {
+                produto.add(Integer.parseInt(lblId1.getText()));
+                this.dispose();
+                TelaDeCardapio x = new TelaDeCardapio();
+                x.setVisible(true);
+
+            } else {
+                produto.add(Integer.parseInt(lblId1.getText()));
+                TelaDePagamento x = new TelaDePagamento();
+                x.setVisible(true);
+                this.dispose();
+            }
+        }
     }//GEN-LAST:event_btnAdd1ActionPerformed
 
     private void btnAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd2ActionPerformed
         // TODO add your handling code here:
-        System.out.println(lblId2.getText());
-        produto.add(Integer.parseInt(lblId2.getText()));
-        TelaAddRemIngrediente x = new TelaAddRemIngrediente();
-        x.setVisible(true);
-        this.dispose();
+        if (adicional2 == true) {
+            produto.add(Integer.parseInt(lblId2.getText()));
+            TelaAddRemIngrediente x = new TelaAddRemIngrediente();
+            x.setVisible(true);
+            this.dispose();
+        }else {
+            Object[] options = {"Sim", "Não"};
+            int op = 0;
+            op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+            if (op == 0) {
+                produto.add(Integer.parseInt(lblId2.getText()));
+                this.dispose();
+                TelaDeCardapio x = new TelaDeCardapio();
+                x.setVisible(true);
+
+            } else {
+                produto.add(Integer.parseInt(lblId2.getText()));
+                TelaDePagamento x = new TelaDePagamento();
+                x.setVisible(true);
+                this.dispose();
+            }
+        }
     }//GEN-LAST:event_btnAdd2ActionPerformed
 
     private void btnAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd3ActionPerformed
         // TODO add your handling code here:
-        System.out.println(lblId3.getText());
-        produto.add(Integer.parseInt(lblId3.getText()));
-        TelaAddRemIngrediente x = new TelaAddRemIngrediente();
-        x.setVisible(true);
-        this.dispose();
+
+        if (adicional3 == true) {
+            produto.add(Integer.parseInt(lblId3.getText()));
+            TelaAddRemIngrediente x = new TelaAddRemIngrediente();
+            x.setVisible(true);
+            this.dispose();
+        }else {
+            Object[] options = {"Sim", "Não"};
+            int op = 0;
+            op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+            if (op == 0) {
+                produto.add(Integer.parseInt(lblId3.getText()));
+                this.dispose();
+                TelaDeCardapio x = new TelaDeCardapio();
+                x.setVisible(true);
+
+            } else {
+                produto.add(Integer.parseInt(lblId3.getText()));
+                TelaDePagamento x = new TelaDePagamento();
+                x.setVisible(true);
+                this.dispose();
+            }
+        }
     }//GEN-LAST:event_btnAdd3ActionPerformed
 
     /**
