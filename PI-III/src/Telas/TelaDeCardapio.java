@@ -232,9 +232,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             }
         });
 
-        jpCategoria1.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria1.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria1.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria1.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -256,9 +257,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jpCategoria2.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria2.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria2.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria2.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -280,9 +282,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpCategoria3.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria3.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria3.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria3.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -304,9 +307,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpCategoria4.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria4.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria4.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria4.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -328,9 +332,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpCategoria5.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria5.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria5.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria5.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -352,9 +357,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpCategoria6.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria6.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria6.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria6.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -376,9 +382,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpCategoria7.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria7.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria7.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria7.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -400,9 +407,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpCategoria8.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria8.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria8.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria8.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -424,9 +432,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpCategoria9.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria9.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria9.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria9.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -448,9 +457,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpCategoria10.setBackground(new java.awt.Color(255, 153, 0));
+        jpCategoria10.setBackground(new java.awt.Color(0, 0, 0));
 
         lblCategoria10.setFont(new java.awt.Font("Unispace", 1, 24)); // NOI18N
+        lblCategoria10.setForeground(new java.awt.Color(255, 102, 0));
         lblCategoria10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCategoria10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -529,21 +539,20 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jpItem1.setBackground(new java.awt.Color(255, 153, 0));
+        jpItem1.setBackground(new java.awt.Color(0, 0, 0));
         jpItem1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jpItem1.setForeground(new java.awt.Color(255, 153, 0));
 
-        lblItem1.setBackground(new java.awt.Color(255, 255, 255));
+        lblItem1.setBackground(new java.awt.Color(255, 102, 0));
         lblItem1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblItem1.setForeground(new java.awt.Color(255, 255, 255));
+        lblItem1.setForeground(new java.awt.Color(255, 102, 0));
 
-        lblPreco1.setBackground(new java.awt.Color(255, 255, 255));
+        lblPreco1.setBackground(new java.awt.Color(255, 102, 0));
         lblPreco1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblPreco1.setForeground(new java.awt.Color(255, 255, 255));
+        lblPreco1.setForeground(new java.awt.Color(255, 102, 0));
 
-        lblDescricao1.setBackground(new java.awt.Color(255, 255, 255));
+        lblDescricao1.setBackground(new java.awt.Color(255, 102, 0));
         lblDescricao1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblDescricao1.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescricao1.setForeground(new java.awt.Color(255, 102, 0));
 
         btnAdd1.setBackground(new java.awt.Color(255, 165, 24));
         btnAdd1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -556,9 +565,9 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             }
         });
 
-        lblId1.setBackground(new java.awt.Color(255, 255, 255));
+        lblId1.setBackground(new java.awt.Color(255, 102, 0));
         lblId1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblId1.setForeground(new java.awt.Color(255, 255, 255));
+        lblId1.setForeground(new java.awt.Color(255, 102, 0));
 
         javax.swing.GroupLayout jpItem1Layout = new javax.swing.GroupLayout(jpItem1);
         jpItem1.setLayout(jpItem1Layout);
@@ -601,21 +610,21 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                         .addGap(24, 24, 24))))
         );
 
-        jpItem3.setBackground(new java.awt.Color(255, 153, 0));
+        jpItem3.setBackground(new java.awt.Color(0, 0, 0));
         jpItem3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jpItem3.setForeground(new java.awt.Color(102, 102, 102));
 
-        lblId3.setBackground(new java.awt.Color(255, 255, 255));
+        lblId3.setBackground(new java.awt.Color(255, 102, 0));
         lblId3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblId3.setForeground(new java.awt.Color(255, 255, 255));
+        lblId3.setForeground(new java.awt.Color(255, 102, 0));
 
-        lblPreco3.setBackground(new java.awt.Color(255, 255, 255));
+        lblPreco3.setBackground(new java.awt.Color(255, 102, 0));
         lblPreco3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblPreco3.setForeground(new java.awt.Color(255, 255, 255));
+        lblPreco3.setForeground(new java.awt.Color(255, 102, 0));
 
-        lblDescricao3.setBackground(new java.awt.Color(255, 255, 255));
+        lblDescricao3.setBackground(new java.awt.Color(255, 102, 0));
         lblDescricao3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblDescricao3.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescricao3.setForeground(new java.awt.Color(255, 102, 0));
 
         btnAdd3.setBackground(new java.awt.Color(255, 165, 24));
         btnAdd3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -628,9 +637,9 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             }
         });
 
-        lblItem3.setBackground(new java.awt.Color(255, 255, 255));
+        lblItem3.setBackground(new java.awt.Color(255, 102, 0));
         lblItem3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblItem3.setForeground(new java.awt.Color(255, 255, 255));
+        lblItem3.setForeground(new java.awt.Color(255, 102, 0));
 
         javax.swing.GroupLayout jpItem3Layout = new javax.swing.GroupLayout(jpItem3);
         jpItem3.setLayout(jpItem3Layout);
@@ -672,21 +681,21 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                         .addGap(0, 30, Short.MAX_VALUE))))
         );
 
-        jpItem2.setBackground(new java.awt.Color(255, 153, 0));
+        jpItem2.setBackground(new java.awt.Color(0, 0, 0));
         jpItem2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jpItem2.setForeground(new java.awt.Color(102, 102, 102));
 
-        lblItem2.setBackground(new java.awt.Color(255, 255, 255));
+        lblItem2.setBackground(new java.awt.Color(255, 102, 0));
         lblItem2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblItem2.setForeground(new java.awt.Color(255, 255, 255));
+        lblItem2.setForeground(new java.awt.Color(255, 102, 0));
 
-        lblPreco2.setBackground(new java.awt.Color(255, 255, 255));
+        lblPreco2.setBackground(new java.awt.Color(255, 102, 0));
         lblPreco2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblPreco2.setForeground(new java.awt.Color(255, 255, 255));
+        lblPreco2.setForeground(new java.awt.Color(255, 102, 0));
 
-        lblDescricao2.setBackground(new java.awt.Color(255, 255, 255));
+        lblDescricao2.setBackground(new java.awt.Color(255, 102, 0));
         lblDescricao2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblDescricao2.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescricao2.setForeground(new java.awt.Color(255, 102, 0));
 
         btnAdd2.setBackground(new java.awt.Color(255, 165, 24));
         btnAdd2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -699,9 +708,9 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             }
         });
 
-        lblId2.setBackground(new java.awt.Color(255, 255, 255));
+        lblId2.setBackground(new java.awt.Color(255, 102, 0));
         lblId2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblId2.setForeground(new java.awt.Color(255, 255, 255));
+        lblId2.setForeground(new java.awt.Color(255, 102, 0));
 
         javax.swing.GroupLayout jpItem2Layout = new javax.swing.GroupLayout(jpItem2);
         jpItem2.setLayout(jpItem2Layout);
@@ -852,6 +861,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         countcat = 1;
         countProdMenor = 1;
         countProdMaior = 100;
+        limparItens();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria1MouseClicked
 
@@ -866,6 +876,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         countcat = 10;
         countProdMenor = 1;
         countProdMaior = 100;
+        limparItens();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria10MouseClicked
 
@@ -874,6 +885,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         countcat = 2;
         countProdMenor = 1;
         countProdMaior = 100;
+        limparItens();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria2MouseClicked
 
@@ -890,6 +902,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         countcat = 4;
         countProdMenor = 1;
         countProdMaior = 100;
+        limparItens();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria4MouseClicked
 
@@ -898,6 +911,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         countcat = 5;
         countProdMenor = 1;
         countProdMaior = 100;
+        limparItens();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria5MouseClicked
 
@@ -914,6 +928,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         countcat = 7;
         countProdMenor = 1;
         countProdMaior = 100;
+        limparItens();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria7MouseClicked
 
@@ -922,6 +937,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         countcat = 8;
         countProdMenor = 1;
         countProdMaior = 100;
+        limparItens();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria8MouseClicked
 
@@ -930,6 +946,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         countcat = 9;
         countProdMenor = 1;
         countProdMaior = 100;
+        limparItens();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }//GEN-LAST:event_lblCategoria9MouseClicked
 
@@ -966,7 +983,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             TelaAddRemIngrediente x = new TelaAddRemIngrediente();
             x.setVisible(true);
             this.dispose();
-        }else {
+        } else {
             Object[] options = {"Sim", "Não"};
             int op = 0;
             op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
@@ -993,7 +1010,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             TelaAddRemIngrediente x = new TelaAddRemIngrediente();
             x.setVisible(true);
             this.dispose();
-        }else {
+        } else {
             Object[] options = {"Sim", "Não"};
             int op = 0;
             op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);

@@ -4,6 +4,8 @@
  */
 package Telas;
 
+import Classes.Categoria;
+import Classes.CrudCategoria;
 import Classes.CrudProduto;
 import Classes.Produto;
 import java.text.ParseException;
@@ -22,6 +24,7 @@ public class frmCadProduto extends javax.swing.JFrame {
     public frmCadProduto() {
         initComponents();
         Listar();
+        listarCategoria();
     }
 
     public void Listar() {
@@ -65,6 +68,16 @@ public class frmCadProduto extends javax.swing.JFrame {
         txtDescricao.setText("");
         txtValor.setText("");
         cbxCategoria.setSelectedIndex(0);
+    }
+
+    public void listarCategoria() {
+        int count = 1;
+        CrudCategoria lista = new CrudCategoria();
+        for (Categoria l : lista.mostrar()) {
+            cbxCategoria.addItem(l.getNome());
+            System.out.println("");
+
+        }
     }
 
     /**
@@ -167,7 +180,6 @@ public class frmCadProduto extends javax.swing.JFrame {
         lblCategoria.setText("Categoria:");
 
         cbxCategoria.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        cbxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sanduiche", "Pastel", "Bebida" }));
         cbxCategoria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblValor.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -367,7 +379,7 @@ public class frmCadProduto extends javax.swing.JFrame {
                     .addComponent(lblTitulo)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,6 +420,7 @@ public class frmCadProduto extends javax.swing.JFrame {
             System.out.println(txtNome.getText());
             System.out.println(txtValor.getText().replaceAll(",", "."));
             System.out.println(cbxCategoria.getSelectedItem());
+System.out.println(cbxCategoria.getSelectedIndex()+1);
             System.out.println(chxAdicional.isSelected());
             Classes.Produto produto = new Classes.Produto(txtNome.getText(), cbxCategoria.getSelectedIndex() + 1, Double.parseDouble(txtValor.getText().replaceAll(",", ".")), txtDescricao.getText(), chxAdicional.isSelected());
             Classes.CrudProduto cadastrar = new Classes.CrudProduto();

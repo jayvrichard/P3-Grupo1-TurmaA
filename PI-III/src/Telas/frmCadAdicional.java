@@ -4,6 +4,10 @@
  */
 package Telas;
 
+import Classes.Adicional;
+import Classes.CrudAdicional;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ruy_s
@@ -15,6 +19,40 @@ public class frmCadAdicional extends javax.swing.JFrame {
      */
     public frmCadAdicional() {
         initComponents();
+        Listar();
+    }
+
+    public void Limpar() {
+        txtId.setText("");
+        txtNome.setText("");
+        txtValor.setText("");
+    }
+
+    public void Listar() {
+        DefaultTableModel modelo = (DefaultTableModel) jtbAdicional.getModel();
+        modelo.setNumRows(0);
+        CrudAdicional lista = new CrudAdicional();
+
+        for (Adicional l : lista.mostrar()) {
+
+            modelo.addRow(new Object[]{
+                l.getId(),
+                l.getNome(),
+                l.getValor(),});
+        }
+    }
+
+    public void ListarDesc(String desc) {
+        DefaultTableModel modelo = (DefaultTableModel) jtbAdicional.getModel();
+        modelo.setNumRows(0);
+        CrudAdicional lista = new CrudAdicional();
+
+        for (Adicional l : lista.mostrarDesc(desc)) {
+            modelo.addRow(new Object[]{
+                l.getId(),
+                l.getNome(),
+                l.getValor(),});
+        }
     }
 
     /**
@@ -29,19 +67,19 @@ public class frmCadAdicional extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        btnExcluir1 = new javax.swing.JButton();
-        btnAlterar1 = new javax.swing.JButton();
-        btnCadastrar1 = new javax.swing.JButton();
-        txtId1 = new javax.swing.JTextField();
-        lblId1 = new javax.swing.JLabel();
-        txtNome1 = new javax.swing.JTextField();
-        lbNome1 = new javax.swing.JLabel();
-        lblValor1 = new javax.swing.JLabel();
-        txtValor1 = new javax.swing.JTextField();
-        btnRetorno1 = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
+        txtId = new javax.swing.JTextField();
+        lblId = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        lbNome = new javax.swing.JLabel();
+        lblValor = new javax.swing.JLabel();
+        txtValor = new javax.swing.JTextField();
+        btnRetorno = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jtbProduto = new javax.swing.JTable();
+        jtbAdicional = new javax.swing.JTable();
         lblPesquisar = new javax.swing.JLabel();
         txtPesquisar = new javax.swing.JTextField();
         btnPesquisar = new javax.swing.JButton();
@@ -55,61 +93,61 @@ public class frmCadAdicional extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
-        btnExcluir1.setBackground(new java.awt.Color(255, 0, 0));
-        btnExcluir1.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        btnExcluir1.setText("Excluir");
-        btnExcluir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnExcluir1.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluir.setBackground(new java.awt.Color(255, 0, 0));
+        btnExcluir.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluir1ActionPerformed(evt);
+                btnExcluirActionPerformed(evt);
             }
         });
 
-        btnAlterar1.setBackground(new java.awt.Color(255, 255, 0));
-        btnAlterar1.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        btnAlterar1.setText("Alterar");
-        btnAlterar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAlterar1.addActionListener(new java.awt.event.ActionListener() {
+        btnAlterar.setBackground(new java.awt.Color(255, 255, 0));
+        btnAlterar.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnAlterar.setText("Alterar");
+        btnAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterar1ActionPerformed(evt);
+                btnAlterarActionPerformed(evt);
             }
         });
 
-        btnCadastrar1.setBackground(new java.awt.Color(102, 255, 0));
-        btnCadastrar1.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        btnCadastrar1.setText("Cadastrar");
-        btnCadastrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCadastrar1.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrar.setBackground(new java.awt.Color(102, 255, 0));
+        btnCadastrar.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnCadastrar.setText("Cadastrar");
+        btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrar1ActionPerformed(evt);
+                btnCadastrarActionPerformed(evt);
             }
         });
 
-        txtId1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtId.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        lblId1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        lblId1.setForeground(new java.awt.Color(255, 255, 255));
-        lblId1.setText("ID:");
+        lblId.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        lblId.setForeground(new java.awt.Color(255, 255, 255));
+        lblId.setText("ID:");
 
-        txtNome1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtNome.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        lbNome1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        lbNome1.setForeground(new java.awt.Color(255, 255, 255));
-        lbNome1.setText("Nome:");
+        lbNome.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        lbNome.setForeground(new java.awt.Color(255, 255, 255));
+        lbNome.setText("Nome:");
 
-        lblValor1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        lblValor1.setForeground(new java.awt.Color(255, 255, 255));
-        lblValor1.setText("Valor:");
+        lblValor.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        lblValor.setForeground(new java.awt.Color(255, 255, 255));
+        lblValor.setText("Valor:");
 
-        txtValor1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtValor.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        btnRetorno1.setBackground(new java.awt.Color(255, 102, 0));
-        btnRetorno1.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        btnRetorno1.setText("Retornar");
-        btnRetorno1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRetorno1.addActionListener(new java.awt.event.ActionListener() {
+        btnRetorno.setBackground(new java.awt.Color(255, 102, 0));
+        btnRetorno.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnRetorno.setText("Retornar");
+        btnRetorno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRetorno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRetorno1ActionPerformed(evt);
+                btnRetornoActionPerformed(evt);
             }
         });
 
@@ -119,29 +157,29 @@ public class frmCadAdicional extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnRetorno1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRetorno, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCadastrar1)
+                .addComponent(btnCadastrar)
                 .addGap(18, 18, 18)
-                .addComponent(btnAlterar1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnExcluir1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(199, 199, 199))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(lblId1)
+                        .addComponent(lblId)
                         .addGap(58, 58, 58)
-                        .addComponent(txtId1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(lbNome1)
+                        .addComponent(lbNome)
                         .addGap(18, 18, 18)
-                        .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(199, 199, 199)
-                        .addComponent(lblValor1)
+                        .addComponent(lblValor)
                         .addGap(18, 18, 18)
-                        .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -149,54 +187,54 @@ public class frmCadAdicional extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblId1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtId1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblValor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblValor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lbNome, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(118, 118, 118)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addComponent(btnRetorno1)
+                        .addComponent(btnRetorno)
                         .addGap(14, 14, 14))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCadastrar1)
-                            .addComponent(btnAlterar1)
-                            .addComponent(btnExcluir1))
+                            .addComponent(btnCadastrar)
+                            .addComponent(btnAlterar)
+                            .addComponent(btnExcluir))
                         .addGap(31, 31, 31))))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jtbProduto.setModel(new javax.swing.table.DefaultTableModel(
+        jtbAdicional.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nome", "Categoria", "Valor", "Descrição", "Adicional"
+                "ID", "Nome", "Valor"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jtbProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+        jtbAdicional.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtbProdutoMouseClicked(evt);
+                jtbAdicionalMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jtbProduto);
+        jScrollPane2.setViewportView(jtbAdicional);
 
         lblPesquisar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblPesquisar.setForeground(new java.awt.Color(255, 255, 255));
@@ -294,99 +332,71 @@ public class frmCadAdicional extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluir1ActionPerformed
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
         try {
 
-            System.out.println(txtId.getText());
-            System.out.println(txtNome.getText());
-            System.out.println(txtDescricao.getText());
-            System.out.println(txtValor.getText());
-            Classes.Produto produto = new Classes.Produto(Integer.parseInt(txtId.getText()));
-            Classes.CrudProduto excluir = new Classes.CrudProduto();
-            System.out.println(excluir.excluir(produto));
+            Classes.Adicional adicional = new Classes.Adicional(Integer.parseInt(txtId.getText()));
+            Classes.CrudAdicional excluir = new Classes.CrudAdicional();
+            System.out.println(excluir.excluir(adicional));
         } catch (NullPointerException ex) {
             System.err.println("Erro: " + ex);
         }
-        //Listar();
-        //Limpar();
-    }//GEN-LAST:event_btnExcluir1ActionPerformed
+        Listar();
+        Limpar();
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
-    private void btnAlterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterar1ActionPerformed
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
         try {
 
-            System.out.println(txtId.getText());
-            System.out.println(txtNome.getText());
-            Classes.Produto produto = new Classes.Produto(Integer.parseInt(txtId.getText()), txtNome.getText(), cbxCategoria.getSelectedIndex() + 1, Double.parseDouble(txtValor.getText()), txtDescricao.getText(), chxAdicional.isSelected());
-            Classes.CrudProduto alterar = new Classes.CrudProduto();
-            System.out.println(alterar.editar(produto));
+            Classes.Adicional adicional = new Classes.Adicional(Integer.parseInt(txtId.getText()), txtNome.getText(), Double.parseDouble(txtValor.getText()));
+            Classes.CrudAdicional alterar = new Classes.CrudAdicional();
+            System.out.println(alterar.editar(adicional));
         } catch (NullPointerException ex) {
             System.err.println("Erro: " + ex);
         }
-        //Listar();
-       // Limpar();
-    }//GEN-LAST:event_btnAlterar1ActionPerformed
+        Listar();
+        Limpar();
+    }//GEN-LAST:event_btnAlterarActionPerformed
 
-    private void btnCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrar1ActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
         try {
-            System.out.println(txtDescricao.getText());
-            System.out.println(txtNome.getText());
-            System.out.println(txtValor.getText().replaceAll(",", "."));
-            System.out.println(cbxCategoria.getSelectedItem());
-            System.out.println(chxAdicional.isSelected());
-            Classes.Produto produto = new Classes.Produto(txtNome.getText(), cbxCategoria.getSelectedIndex() + 1, Double.parseDouble(txtValor.getText().replaceAll(",", ".")), txtDescricao.getText(), chxAdicional.isSelected());
-            Classes.CrudProduto cadastrar = new Classes.CrudProduto();
-            System.out.println(cadastrar.inserir(produto));
+
+            Classes.Adicional adicional = new Classes.Adicional(txtNome.getText(), Double.parseDouble(txtValor.getText()));
+            Classes.CrudAdicional cadastrar = new Classes.CrudAdicional();
+            System.out.println(cadastrar.inserir(adicional));
         } catch (NullPointerException ex) {
             System.err.println("Erro: " + ex);
         }
-        //Listar();
-       // Limpar();
-    }//GEN-LAST:event_btnCadastrar1ActionPerformed
+        Listar();
+        Limpar();
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void btnRetorno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetorno1ActionPerformed
+    private void btnRetornoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornoActionPerformed
         FrmProdCat x = new FrmProdCat();
         x.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnRetorno1ActionPerformed
+    }//GEN-LAST:event_btnRetornoActionPerformed
 
-    private void jtbProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbProdutoMouseClicked
+    private void jtbAdicionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbAdicionalMouseClicked
         // TODO add your handling code here:
-        //Limpar();
-        boolean t = true;
-        String texto = jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 5).toString();
-        if (texto.equalsIgnoreCase("true")) {
-            t = true;
-        } else {
-            t = false;
-        }
-        /*texto = jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 2).toString();
-        int count = 0;
-        cbxCategoria.setSelectedIndex(0);
-        do {
-            if (cbxCategoria.getSelectedItem() != texto) {
-                cbxCategoria.setSelectedIndex(cbxCategoria.getSelectedIndex()+1);
-            }
-        } while (cbxCategoria.getSelectedItem().equals(texto));
-        */
-        txtId.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 0).toString());
-        txtNome.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 1).toString());
-        cbxCategoria.setSelectedIndex(Integer.parseInt(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 2).toString()) - 1);
-        txtValor.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 3).toString());
-        txtDescricao.setText(jtbProduto.getValueAt(jtbProduto.getSelectedRow(), 4).toString());
-        chxAdicional.setSelected(t);
-    }//GEN-LAST:event_jtbProdutoMouseClicked
+        Limpar();
+
+        txtId.setText(jtbAdicional.getValueAt(jtbAdicional.getSelectedRow(), 0).toString());
+        txtNome.setText(jtbAdicional.getValueAt(jtbAdicional.getSelectedRow(), 1).toString());
+        txtValor.setText(jtbAdicional.getValueAt(jtbAdicional.getSelectedRow(), 2).toString());
+    }//GEN-LAST:event_jtbAdicionalMouseClicked
 
     private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed
         // TODO add your handling code here:
-       // ListarDesc(txtPesquisar.getText());
+        ListarDesc(txtPesquisar.getText());
     }//GEN-LAST:event_txtPesquisarActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         // TODO add your handling code here:
-        //ListarDesc(txtPesquisar.getText());
+        ListarDesc(txtPesquisar.getText());
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     /**
@@ -425,24 +435,24 @@ public class frmCadAdicional extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAlterar1;
-    private javax.swing.JButton btnCadastrar1;
-    private javax.swing.JButton btnExcluir1;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnPesquisar;
-    private javax.swing.JButton btnRetorno1;
+    private javax.swing.JButton btnRetorno;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jtbProduto;
-    private javax.swing.JLabel lbNome1;
-    private javax.swing.JLabel lblId1;
+    private javax.swing.JTable jtbAdicional;
+    private javax.swing.JLabel lbNome;
+    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblPesquisar;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblValor1;
-    private javax.swing.JTextField txtId1;
-    private javax.swing.JTextField txtNome1;
+    private javax.swing.JLabel lblValor;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtPesquisar;
-    private javax.swing.JTextField txtValor1;
+    private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }
