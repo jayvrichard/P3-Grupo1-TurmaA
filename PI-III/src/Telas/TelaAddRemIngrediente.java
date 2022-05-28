@@ -9,13 +9,11 @@ import Classes.Adicional;
 import Classes.CrudAdicional;
 import Classes.CrudProduto;
 import Classes.Produto;
+import java.awt.TextField;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
-/**
- *
- * @author Matheus
- */
 public class TelaAddRemIngrediente extends javax.swing.JFrame {
 
     /**
@@ -27,9 +25,19 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
         listarItem(TelaDeCardapio.produto.get(TelaDeCardapio.produto.size() - 1));
         removerA();
         listarAdicionais();
+idAd.removeAll(idAd);
+valorAd.removeAll(valorAd);
+        System.out.println(idAd);
     }
 
-    public int quantidade1 = 0, quantidade2 = 0, quantidade3 = 0, quantidade4 = 0, quantidade5 = 0, quantidade6 = 0, quantidade7 = 0, quantidade8 = 0, quantidade9 = 0, quantidade10 = 0;
+    public int quantidade1 = 0, quantidade2 = 0, quantidade3 = 0, quantidade4 = 0,
+            quantidade5 = 0, quantidade6 = 0, quantidade7 = 0, quantidade8 = 0, quantidade9 = 0,
+            quantidade10 = 0;
+
+    ArrayList<Integer> idAd = new ArrayList();
+    ArrayList<Double> valorAd = new ArrayList();
+
+    public static ArrayList<Adicional> adicional = new ArrayList();
 
     public void listarItem(int id) {
         CrudProduto lista = new CrudProduto();
@@ -46,93 +54,113 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
             switch (count) {
                 case 1:
                     lblIngrediente1.setVisible(true);
-                    lblIngrediente1.setText(l.getNome());
+                    lblIngrediente1.setText(l.getId() + " - " + l.getNome());
                     lblPreco1.setVisible(true);
                     lblPreco1.setText(l.getNome());
                     btnAdd1.setVisible(true);
                     btnRem1.setVisible(true);
                     txtQuant1.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 2:
-                    lblIngrediente2.setText(l.getNome());
+                    lblIngrediente2.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente2.setVisible(true);
                     lblPreco2.setVisible(true);
                     lblPreco2.setText(l.getNome());
                     btnAdd2.setVisible(true);
                     btnRem2.setVisible(true);
                     txtQuant2.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 3:
-                    lblIngrediente3.setText(l.getNome());
+                    lblIngrediente3.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente3.setVisible(true);
                     lblPreco3.setVisible(true);
                     lblPreco3.setText(l.getNome());
                     btnAdd3.setVisible(true);
                     btnRem3.setVisible(true);
                     txtQuant3.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 4:
-                    lblIngrediente4.setText(l.getNome());
+                    lblIngrediente4.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente4.setVisible(true);
                     lblPreco4.setVisible(true);
                     lblPreco4.setText(l.getNome());
                     btnAdd4.setVisible(true);
                     btnRem4.setVisible(true);
                     txtQuant4.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 5:
-                    lblIngrediente5.setText(l.getNome());
+                    lblIngrediente5.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente5.setVisible(true);
                     lblPreco5.setVisible(true);
                     lblPreco5.setText(l.getNome());
                     btnAdd5.setVisible(true);
                     btnRem5.setVisible(true);
                     txtQuant5.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 6:
-                    lblIngrediente6.setText(l.getNome());
+                    lblIngrediente6.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente6.setVisible(true);
                     lblPreco6.setVisible(true);
                     lblPreco6.setText(l.getNome());
                     btnAdd6.setVisible(true);
                     btnRem6.setVisible(true);
                     txtQuant6.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 7:
-                    lblIngrediente7.setText(l.getNome());
+                    lblIngrediente7.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente7.setVisible(true);
                     lblPreco7.setVisible(true);
                     lblPreco7.setText(l.getNome());
                     btnAdd7.setVisible(true);
                     btnRem7.setVisible(true);
                     txtQuant7.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 8:
-                    lblIngrediente8.setText(l.getNome());
+                    lblIngrediente8.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente8.setVisible(true);
                     lblPreco8.setVisible(true);
                     lblPreco8.setText(l.getNome());
                     btnAdd8.setVisible(true);
                     btnRem8.setVisible(true);
                     txtQuant8.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 9:
-                    lblIngrediente9.setText(l.getNome());
+                    lblIngrediente9.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente9.setVisible(true);
                     lblPreco9.setVisible(true);
                     lblPreco9.setText(l.getNome());
                     btnAdd9.setVisible(true);
                     btnRem9.setVisible(true);
                     txtQuant9.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
                 case 10:
-                    lblIngrediente10.setText(l.getNome());
+                    lblIngrediente10.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente10.setVisible(true);
                     lblPreco10.setVisible(true);
                     lblPreco10.setText(l.getNome());
                     btnAdd10.setVisible(true);
                     btnRem10.setVisible(true);
                     txtQuant10.setVisible(true);
+                    idAd.add(l.getId());
+                    valorAd.add(l.getValor());
                     break;
             }
             count++;
@@ -607,6 +635,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
 
         txtQuant10.setEditable(false);
         txtQuant10.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant10.setText("0");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -907,6 +936,76 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
 
     private void btnConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluirActionPerformed
         // TODO add your handling code here:
+        if (quantidade1 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente1.getText());
+            a.setQuant(quantidade1);
+            a.setValor(valorAd.get(0));
+            adicional.add(a);
+        }
+        if (quantidade2 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente2.getText());
+            a.setQuant(quantidade2);
+            a.setValor(valorAd.get(1));
+            adicional.add(a);
+        }
+        if (quantidade3 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente3.getText());
+            a.setQuant(quantidade3);
+            a.setValor(valorAd.get(2));
+            adicional.add(a);
+        }
+        if (quantidade4 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente4.getText());
+            a.setQuant(quantidade4);
+            a.setValor(valorAd.get(3));
+            adicional.add(a);
+        }
+        if (quantidade5 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente5.getText());
+            a.setQuant(quantidade5);
+            a.setValor(valorAd.get(4));
+            adicional.add(a);
+        }
+        if (quantidade6 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente6.getText());
+            a.setQuant(quantidade6);
+            a.setValor(valorAd.get(5));
+            adicional.add(a);
+        }
+        if (quantidade7 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente7.getText());
+            a.setQuant(quantidade7);
+            a.setValor(valorAd.get(6));
+            adicional.add(a);
+        }
+        if (quantidade8 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente8.getText());
+            a.setQuant(quantidade8);
+            a.setValor(valorAd.get(7));
+            adicional.add(a);
+        }
+        if (quantidade9 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente9.getText());
+            a.setQuant(quantidade9);
+            a.setValor(valorAd.get(8));
+            adicional.add(a);
+        }
+        if (quantidade10 != 0) {
+            Adicional a = new Adicional();
+            a.setNome(lblIngrediente10.getText());
+            a.setQuant(quantidade10);
+            a.setValor(valorAd.get(9));
+            adicional.add(a);
+        }
         TelaDePagamento x = new TelaDePagamento();
         x.setVisible(true);
         this.setVisible(false);
@@ -928,55 +1027,55 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
     private void btnAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd2ActionPerformed
         // TODO add your handling code here:
         quantidade2++;
-        txtQuant1.setText("" + quantidade2);
+        txtQuant2.setText("" + quantidade2);
     }//GEN-LAST:event_btnAdd2ActionPerformed
 
     private void btnAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd3ActionPerformed
         // TODO add your handling code here:
         quantidade3++;
-        txtQuant1.setText("" + quantidade3);
+        txtQuant3.setText("" + quantidade3);
     }//GEN-LAST:event_btnAdd3ActionPerformed
 
     private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
         // TODO add your handling code here:
         quantidade4++;
-        txtQuant1.setText("" + quantidade4);
+        txtQuant4.setText("" + quantidade4);
     }//GEN-LAST:event_btnAdd4ActionPerformed
 
     private void btnAdd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd5ActionPerformed
         // TODO add your handling code here:
         quantidade5++;
-        txtQuant1.setText("" + quantidade5);
+        txtQuant5.setText("" + quantidade5);
     }//GEN-LAST:event_btnAdd5ActionPerformed
 
     private void btnAdd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd6ActionPerformed
         // TODO add your handling code here:
         quantidade6++;
-        txtQuant1.setText("" + quantidade6);
+        txtQuant6.setText("" + quantidade6);
     }//GEN-LAST:event_btnAdd6ActionPerformed
 
     private void btnAdd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd7ActionPerformed
         // TODO add your handling code here:
         quantidade7++;
-        txtQuant1.setText("" + quantidade7);
+        txtQuant7.setText("" + quantidade7);
     }//GEN-LAST:event_btnAdd7ActionPerformed
 
     private void btnAdd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd8ActionPerformed
         // TODO add your handling code here:
         quantidade8++;
-        txtQuant1.setText("" + quantidade8);
+        txtQuant8.setText("" + quantidade8);
     }//GEN-LAST:event_btnAdd8ActionPerformed
 
     private void btnAdd9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd9ActionPerformed
         // TODO add your handling code here:
         quantidade9++;
-        txtQuant1.setText("" + quantidade9);
+        txtQuant9.setText("" + quantidade9);
     }//GEN-LAST:event_btnAdd9ActionPerformed
 
     private void btnAdd10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd10ActionPerformed
         // TODO add your handling code here:
         quantidade10++;
-        txtQuant1.setText("" + quantidade10);
+        txtQuant10.setText("" + quantidade10);
     }//GEN-LAST:event_btnAdd10ActionPerformed
 
     private void btnRem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem1ActionPerformed
@@ -991,92 +1090,92 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
 
     private void btnRem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem2ActionPerformed
         // TODO add your handling code here:
-if (quantidade2 == 0) {
+        if (quantidade2 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade2--;
-        txtQuant1.setText("" + quantidade2);
-}
+            quantidade2--;
+            txtQuant2.setText("" + quantidade2);
+        }
     }//GEN-LAST:event_btnRem2ActionPerformed
 
     private void btnRem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem3ActionPerformed
         // TODO add your handling code here:
-if (quantidade3 == 0) {
+        if (quantidade3 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade3--;
-        txtQuant1.setText("" + quantidade3);
-}
+            quantidade3--;
+            txtQuant3.setText("" + quantidade3);
+        }
     }//GEN-LAST:event_btnRem3ActionPerformed
 
     private void btnRem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem4ActionPerformed
         // TODO add your handling code here:
-if (quantidade4 == 0) {
+        if (quantidade4 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade4--;
-        txtQuant1.setText("" + quantidade4);
-}
+            quantidade4--;
+            txtQuant4.setText("" + quantidade4);
+        }
     }//GEN-LAST:event_btnRem4ActionPerformed
 
     private void btnRem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem5ActionPerformed
         // TODO add your handling code here:
-if (quantidade5 == 0) {
+        if (quantidade5 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade5--;
-        txtQuant1.setText("" + quantidade5);
-}
+            quantidade5--;
+            txtQuant5.setText("" + quantidade5);
+        }
     }//GEN-LAST:event_btnRem5ActionPerformed
 
     private void btnRem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem6ActionPerformed
         // TODO add your handling code here:
-if (quantidade6 == 0) {
+        if (quantidade6 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade6--;
-        txtQuant1.setText("" + quantidade6);
-}
+            quantidade6--;
+            txtQuant6.setText("" + quantidade6);
+        }
     }//GEN-LAST:event_btnRem6ActionPerformed
 
     private void btnRem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem7ActionPerformed
         // TODO add your handling code here:
-if (quantidade7 == 0) {
+        if (quantidade7 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade7--;
-        txtQuant1.setText("" + quantidade7);
-}
+            quantidade7--;
+            txtQuant7.setText("" + quantidade7);
+        }
     }//GEN-LAST:event_btnRem7ActionPerformed
 
     private void btnRem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem8ActionPerformed
         // TODO add your handling code here:
-if (quantidade8 == 0) {
+        if (quantidade8 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade8--;
-        txtQuant1.setText("" + quantidade8);
-}
+            quantidade8--;
+            txtQuant8.setText("" + quantidade8);
+        }
     }//GEN-LAST:event_btnRem8ActionPerformed
 
     private void btnRem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem9ActionPerformed
         // TODO add your handling code here:
-if (quantidade9 == 0) {
+        if (quantidade9 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade9--;
-        txtQuant1.setText("" + quantidade9);
-}
+            quantidade9--;
+            txtQuant9.setText("" + quantidade9);
+        }
     }//GEN-LAST:event_btnRem9ActionPerformed
 
     private void btnRem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem10ActionPerformed
         // TODO add your handling code here:
-if (quantidade10 == 0) {
+        if (quantidade10 == 0) {
             JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
         } else {
-        quantidade10--;
-        txtQuant1.setText("" + quantidade10);
-}
+            quantidade10--;
+            txtQuant10.setText("" + quantidade10);
+        }
     }//GEN-LAST:event_btnRem10ActionPerformed
 
     /**

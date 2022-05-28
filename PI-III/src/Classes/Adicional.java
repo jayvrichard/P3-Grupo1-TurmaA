@@ -10,7 +10,7 @@ package Classes;
  */
 public class Adicional {
 
-    private int id;
+    private int id, quant;
     private String nome;
     private double valor;
 
@@ -54,6 +54,14 @@ public class Adicional {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public int getQuant() {
+        return quant;
+    }
+
+    public void setQuant(int quant) {
+        this.quant = quant;
     }
 
 }
