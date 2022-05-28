@@ -53,11 +53,11 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 case 1:
                     jpCategoria1.setVisible(true);
                     lblCategoria1.setText(l.getNome());
-
                     break;
                 case 2:
                     lblCategoria2.setText(l.getNome());
                     jpCategoria2.setVisible(true);
+
                     break;
                 case 3:
                     lblCategoria3.setText(l.getNome());

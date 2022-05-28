@@ -5,8 +5,11 @@
  */
 package Telas;
 
+import Classes.Adicional;
+import Classes.CrudAdicional;
 import Classes.CrudProduto;
 import Classes.Produto;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
 /**
@@ -22,7 +25,11 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
         initComponents();
         System.out.println(TelaDeCardapio.produto);
         listarItem(TelaDeCardapio.produto.get(TelaDeCardapio.produto.size() - 1));
+        removerA();
+        listarAdicionais();
     }
+
+    public int quantidade1 = 0, quantidade2 = 0, quantidade3 = 0, quantidade4 = 0, quantidade5 = 0, quantidade6 = 0, quantidade7 = 0, quantidade8 = 0, quantidade9 = 0, quantidade10 = 0;
 
     public void listarItem(int id) {
         CrudProduto lista = new CrudProduto();
@@ -30,6 +37,160 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
             lblNome.setText(l.getNome());
             lblDescricao.setText(l.getDescricao());
         }
+    }
+
+    public void listarAdicionais() {
+        int count = 1;
+        CrudAdicional lista = new CrudAdicional();
+        for (Adicional l : lista.mostrar()) {
+            switch (count) {
+                case 1:
+                    lblIngrediente1.setVisible(true);
+                    lblIngrediente1.setText(l.getNome());
+                    lblPreco1.setVisible(true);
+                    lblPreco1.setText(l.getNome());
+                    btnAdd1.setVisible(true);
+                    btnRem1.setVisible(true);
+                    txtQuant1.setVisible(true);
+                    break;
+                case 2:
+                    lblIngrediente2.setText(l.getNome());
+                    lblIngrediente2.setVisible(true);
+                    lblPreco2.setVisible(true);
+                    lblPreco2.setText(l.getNome());
+                    btnAdd2.setVisible(true);
+                    btnRem2.setVisible(true);
+                    txtQuant2.setVisible(true);
+                    break;
+                case 3:
+                    lblIngrediente3.setText(l.getNome());
+                    lblIngrediente3.setVisible(true);
+                    lblPreco3.setVisible(true);
+                    lblPreco3.setText(l.getNome());
+                    btnAdd3.setVisible(true);
+                    btnRem3.setVisible(true);
+                    txtQuant3.setVisible(true);
+                    break;
+                case 4:
+                    lblIngrediente4.setText(l.getNome());
+                    lblIngrediente4.setVisible(true);
+                    lblPreco4.setVisible(true);
+                    lblPreco4.setText(l.getNome());
+                    btnAdd4.setVisible(true);
+                    btnRem4.setVisible(true);
+                    txtQuant4.setVisible(true);
+                    break;
+                case 5:
+                    lblIngrediente5.setText(l.getNome());
+                    lblIngrediente5.setVisible(true);
+                    lblPreco5.setVisible(true);
+                    lblPreco5.setText(l.getNome());
+                    btnAdd5.setVisible(true);
+                    btnRem5.setVisible(true);
+                    txtQuant5.setVisible(true);
+                    break;
+                case 6:
+                    lblIngrediente6.setText(l.getNome());
+                    lblIngrediente6.setVisible(true);
+                    lblPreco6.setVisible(true);
+                    lblPreco6.setText(l.getNome());
+                    btnAdd6.setVisible(true);
+                    btnRem6.setVisible(true);
+                    txtQuant6.setVisible(true);
+                    break;
+                case 7:
+                    lblIngrediente7.setText(l.getNome());
+                    lblIngrediente7.setVisible(true);
+                    lblPreco7.setVisible(true);
+                    lblPreco7.setText(l.getNome());
+                    btnAdd7.setVisible(true);
+                    btnRem7.setVisible(true);
+                    txtQuant7.setVisible(true);
+                    break;
+                case 8:
+                    lblIngrediente8.setText(l.getNome());
+                    lblIngrediente8.setVisible(true);
+                    lblPreco8.setVisible(true);
+                    lblPreco8.setText(l.getNome());
+                    btnAdd8.setVisible(true);
+                    btnRem8.setVisible(true);
+                    txtQuant8.setVisible(true);
+                    break;
+                case 9:
+                    lblIngrediente9.setText(l.getNome());
+                    lblIngrediente9.setVisible(true);
+                    lblPreco9.setVisible(true);
+                    lblPreco9.setText(l.getNome());
+                    btnAdd9.setVisible(true);
+                    btnRem9.setVisible(true);
+                    txtQuant9.setVisible(true);
+                    break;
+                case 10:
+                    lblIngrediente10.setText(l.getNome());
+                    lblIngrediente10.setVisible(true);
+                    lblPreco10.setVisible(true);
+                    lblPreco10.setText(l.getNome());
+                    btnAdd10.setVisible(true);
+                    btnRem10.setVisible(true);
+                    txtQuant10.setVisible(true);
+                    break;
+            }
+            count++;
+
+        }
+    }
+
+    public void removerA() {
+        lblPreco1.setVisible(false);
+        lblPreco2.setVisible(false);
+        lblPreco3.setVisible(false);
+        lblPreco4.setVisible(false);
+        lblPreco5.setVisible(false);
+        lblPreco6.setVisible(false);
+        lblPreco7.setVisible(false);
+        lblPreco8.setVisible(false);
+        lblPreco9.setVisible(false);
+        lblPreco10.setVisible(false);
+        btnAdd1.setVisible(false);
+        btnAdd2.setVisible(false);
+        btnAdd3.setVisible(false);
+        btnAdd4.setVisible(false);
+        btnAdd5.setVisible(false);
+        btnAdd6.setVisible(false);
+        btnAdd7.setVisible(false);
+        btnAdd8.setVisible(false);
+        btnAdd9.setVisible(false);
+        btnAdd10.setVisible(false);
+        lblIngrediente1.setVisible(false);
+        lblIngrediente2.setVisible(false);
+        lblIngrediente3.setVisible(false);
+        lblIngrediente4.setVisible(false);
+        lblIngrediente5.setVisible(false);
+        lblIngrediente6.setVisible(false);
+        lblIngrediente7.setVisible(false);
+        lblIngrediente8.setVisible(false);
+        lblIngrediente9.setVisible(false);
+        lblIngrediente10.setVisible(false);
+        btnRem1.setVisible(false);
+        btnRem2.setVisible(false);
+        btnRem3.setVisible(false);
+        btnRem4.setVisible(false);
+        btnRem5.setVisible(false);
+        btnRem6.setVisible(false);
+        btnRem7.setVisible(false);
+        btnRem8.setVisible(false);
+        btnRem9.setVisible(false);
+        btnRem10.setVisible(false);
+        txtQuant1.setVisible(false);
+        txtQuant2.setVisible(false);
+        txtQuant3.setVisible(false);
+        txtQuant4.setVisible(false);
+        txtQuant5.setVisible(false);
+        txtQuant6.setVisible(false);
+        txtQuant7.setVisible(false);
+        txtQuant8.setVisible(false);
+        txtQuant9.setVisible(false);
+        txtQuant10.setVisible(false);
     }
 
     /**
@@ -86,6 +247,16 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
         btnRem10 = new javax.swing.JButton();
         btnAdd10 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        txtQuant1 = new javax.swing.JTextField();
+        txtQuant2 = new javax.swing.JTextField();
+        txtQuant3 = new javax.swing.JTextField();
+        txtQuant4 = new javax.swing.JTextField();
+        txtQuant5 = new javax.swing.JTextField();
+        txtQuant6 = new javax.swing.JTextField();
+        txtQuant7 = new javax.swing.JTextField();
+        txtQuant8 = new javax.swing.JTextField();
+        txtQuant9 = new javax.swing.JTextField();
+        txtQuant10 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         btnCancelar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -219,84 +390,223 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
         btnRem1.setBackground(new java.awt.Color(254, 92, 84));
         btnRem1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem1.setText("-");
+        btnRem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem1ActionPerformed(evt);
+            }
+        });
 
         btnAdd1.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd1.setText("+");
+        btnAdd1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd1ActionPerformed(evt);
+            }
+        });
 
         btnAdd2.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd2.setText("+");
+        btnAdd2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd2ActionPerformed(evt);
+            }
+        });
 
         btnRem2.setBackground(new java.awt.Color(254, 92, 84));
         btnRem2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem2.setText("-");
+        btnRem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem2ActionPerformed(evt);
+            }
+        });
 
         btnRem3.setBackground(new java.awt.Color(254, 92, 84));
         btnRem3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem3.setText("-");
+        btnRem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem3ActionPerformed(evt);
+            }
+        });
 
         btnAdd3.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd3.setText("+");
+        btnAdd3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd3ActionPerformed(evt);
+            }
+        });
 
         btnAdd4.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd4.setText("+");
+        btnAdd4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd4ActionPerformed(evt);
+            }
+        });
 
         btnRem4.setBackground(new java.awt.Color(254, 92, 84));
         btnRem4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem4.setText("-");
+        btnRem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem4ActionPerformed(evt);
+            }
+        });
 
         btnRem5.setBackground(new java.awt.Color(254, 92, 84));
         btnRem5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem5.setText("-");
+        btnRem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem5ActionPerformed(evt);
+            }
+        });
 
         btnAdd5.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd5.setText("+");
+        btnAdd5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd5ActionPerformed(evt);
+            }
+        });
 
         btnAdd6.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd6.setText("+");
+        btnAdd6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd6ActionPerformed(evt);
+            }
+        });
 
         btnRem6.setBackground(new java.awt.Color(254, 92, 84));
         btnRem6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem6.setText("-");
+        btnRem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem6ActionPerformed(evt);
+            }
+        });
 
         btnRem7.setBackground(new java.awt.Color(254, 92, 84));
         btnRem7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem7.setText("-");
+        btnRem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem7ActionPerformed(evt);
+            }
+        });
 
         btnAdd7.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd7.setText("+");
+        btnAdd7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd7ActionPerformed(evt);
+            }
+        });
 
         btnRem8.setBackground(new java.awt.Color(254, 92, 84));
         btnRem8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem8.setText("-");
+        btnRem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem8ActionPerformed(evt);
+            }
+        });
 
         btnAdd8.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd8.setText("+");
+        btnAdd8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd8ActionPerformed(evt);
+            }
+        });
 
         btnRem9.setBackground(new java.awt.Color(254, 92, 84));
         btnRem9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem9.setText("-");
+        btnRem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem9ActionPerformed(evt);
+            }
+        });
 
         btnAdd9.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd9.setText("+");
+        btnAdd9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd9ActionPerformed(evt);
+            }
+        });
 
         btnRem10.setBackground(new java.awt.Color(254, 92, 84));
         btnRem10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRem10.setText("-");
+        btnRem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRem10ActionPerformed(evt);
+            }
+        });
 
         btnAdd10.setBackground(new java.awt.Color(2, 248, 148));
         btnAdd10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd10.setText("+");
+        btnAdd10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd10ActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
+
+        txtQuant1.setEditable(false);
+        txtQuant1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant1.setText("0");
+
+        txtQuant2.setEditable(false);
+        txtQuant2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant2.setText("0");
+
+        txtQuant3.setEditable(false);
+        txtQuant3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant3.setText("0");
+
+        txtQuant4.setEditable(false);
+        txtQuant4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant4.setText("0");
+
+        txtQuant5.setEditable(false);
+        txtQuant5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant5.setText("0");
+
+        txtQuant6.setEditable(false);
+        txtQuant6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant6.setText("0");
+
+        txtQuant7.setEditable(false);
+        txtQuant7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant7.setText("0");
+
+        txtQuant8.setEditable(false);
+        txtQuant8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant8.setText("0");
+
+        txtQuant9.setEditable(false);
+        txtQuant9.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtQuant9.setText("0");
+
+        txtQuant10.setEditable(false);
+        txtQuant10.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -328,21 +638,31 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnRem1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtQuant1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnRem2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtQuant2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnAdd2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(btnRem3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtQuant3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnAdd3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(btnRem4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtQuant4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnAdd4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnRem5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtQuant5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAdd5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
@@ -368,21 +688,31 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addComponent(btnRem6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtQuant6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnAdd6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addComponent(btnRem10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtQuant10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnAdd10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnRem9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtQuant9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAdd9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnRem8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtQuant8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAdd8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnRem7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtQuant7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAdd7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(24, 24, 24))
@@ -398,27 +728,32 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPreco1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRem1)
-                            .addComponent(btnAdd1))
+                            .addComponent(btnAdd1)
+                            .addComponent(txtQuant1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPreco2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRem2)
-                            .addComponent(btnAdd2))
+                            .addComponent(btnAdd2)
+                            .addComponent(txtQuant2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPreco3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRem3)
-                            .addComponent(btnAdd3))
+                            .addComponent(btnAdd3)
+                            .addComponent(txtQuant3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPreco4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRem4)
-                            .addComponent(btnAdd4))
+                            .addComponent(btnAdd4)
+                            .addComponent(txtQuant4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPreco5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRem5)
-                            .addComponent(btnAdd5)))
+                            .addComponent(btnAdd5)
+                            .addComponent(txtQuant5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblIngrediente1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -441,32 +776,39 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(lblIngrediente10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblPreco6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnRem6)
-                                .addComponent(btnAdd6))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblPreco7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnRem7)
-                                .addComponent(btnAdd7))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lblPreco6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnRem6)
+                                        .addComponent(btnAdd6)
+                                        .addComponent(txtQuant6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lblPreco7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnRem7)
+                                        .addComponent(btnAdd7)))
+                                .addComponent(txtQuant7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblPreco8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnRem8)
-                                .addComponent(btnAdd8))
+                                .addComponent(btnAdd8)
+                                .addComponent(txtQuant8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblPreco9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnRem9)
-                                .addComponent(btnAdd9))
+                                .addComponent(btnAdd9)
+                                .addComponent(txtQuant9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblPreco10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnRem10)
-                                .addComponent(btnAdd10))))
+                                .addComponent(btnAdd10)
+                                .addComponent(txtQuant10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnConcluir)
                 .addContainerGap())
         );
@@ -520,7 +862,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(btnCancelar)
@@ -565,9 +907,9 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
 
     private void btnConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluirActionPerformed
         // TODO add your handling code here:
-        /* PersProdRem x = new PersProdRem ();
+        TelaDePagamento x = new TelaDePagamento();
         x.setVisible(true);
-        this.setVisible(false);*/
+        this.setVisible(false);
     }//GEN-LAST:event_btnConcluirActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -576,6 +918,166 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
         x.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
+        // TODO add your handling code here:
+        quantidade1++;
+        txtQuant1.setText("" + quantidade1);
+    }//GEN-LAST:event_btnAdd1ActionPerformed
+
+    private void btnAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd2ActionPerformed
+        // TODO add your handling code here:
+        quantidade2++;
+        txtQuant1.setText("" + quantidade2);
+    }//GEN-LAST:event_btnAdd2ActionPerformed
+
+    private void btnAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd3ActionPerformed
+        // TODO add your handling code here:
+        quantidade3++;
+        txtQuant1.setText("" + quantidade3);
+    }//GEN-LAST:event_btnAdd3ActionPerformed
+
+    private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
+        // TODO add your handling code here:
+        quantidade4++;
+        txtQuant1.setText("" + quantidade4);
+    }//GEN-LAST:event_btnAdd4ActionPerformed
+
+    private void btnAdd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd5ActionPerformed
+        // TODO add your handling code here:
+        quantidade5++;
+        txtQuant1.setText("" + quantidade5);
+    }//GEN-LAST:event_btnAdd5ActionPerformed
+
+    private void btnAdd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd6ActionPerformed
+        // TODO add your handling code here:
+        quantidade6++;
+        txtQuant1.setText("" + quantidade6);
+    }//GEN-LAST:event_btnAdd6ActionPerformed
+
+    private void btnAdd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd7ActionPerformed
+        // TODO add your handling code here:
+        quantidade7++;
+        txtQuant1.setText("" + quantidade7);
+    }//GEN-LAST:event_btnAdd7ActionPerformed
+
+    private void btnAdd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd8ActionPerformed
+        // TODO add your handling code here:
+        quantidade8++;
+        txtQuant1.setText("" + quantidade8);
+    }//GEN-LAST:event_btnAdd8ActionPerformed
+
+    private void btnAdd9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd9ActionPerformed
+        // TODO add your handling code here:
+        quantidade9++;
+        txtQuant1.setText("" + quantidade9);
+    }//GEN-LAST:event_btnAdd9ActionPerformed
+
+    private void btnAdd10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd10ActionPerformed
+        // TODO add your handling code here:
+        quantidade10++;
+        txtQuant1.setText("" + quantidade10);
+    }//GEN-LAST:event_btnAdd10ActionPerformed
+
+    private void btnRem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem1ActionPerformed
+        // TODO add your handling code here:
+        if (quantidade1 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+            quantidade1--;
+            txtQuant1.setText("" + quantidade1);
+        }
+    }//GEN-LAST:event_btnRem1ActionPerformed
+
+    private void btnRem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem2ActionPerformed
+        // TODO add your handling code here:
+if (quantidade2 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade2--;
+        txtQuant1.setText("" + quantidade2);
+}
+    }//GEN-LAST:event_btnRem2ActionPerformed
+
+    private void btnRem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem3ActionPerformed
+        // TODO add your handling code here:
+if (quantidade3 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade3--;
+        txtQuant1.setText("" + quantidade3);
+}
+    }//GEN-LAST:event_btnRem3ActionPerformed
+
+    private void btnRem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem4ActionPerformed
+        // TODO add your handling code here:
+if (quantidade4 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade4--;
+        txtQuant1.setText("" + quantidade4);
+}
+    }//GEN-LAST:event_btnRem4ActionPerformed
+
+    private void btnRem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem5ActionPerformed
+        // TODO add your handling code here:
+if (quantidade5 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade5--;
+        txtQuant1.setText("" + quantidade5);
+}
+    }//GEN-LAST:event_btnRem5ActionPerformed
+
+    private void btnRem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem6ActionPerformed
+        // TODO add your handling code here:
+if (quantidade6 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade6--;
+        txtQuant1.setText("" + quantidade6);
+}
+    }//GEN-LAST:event_btnRem6ActionPerformed
+
+    private void btnRem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem7ActionPerformed
+        // TODO add your handling code here:
+if (quantidade7 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade7--;
+        txtQuant1.setText("" + quantidade7);
+}
+    }//GEN-LAST:event_btnRem7ActionPerformed
+
+    private void btnRem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem8ActionPerformed
+        // TODO add your handling code here:
+if (quantidade8 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade8--;
+        txtQuant1.setText("" + quantidade8);
+}
+    }//GEN-LAST:event_btnRem8ActionPerformed
+
+    private void btnRem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem9ActionPerformed
+        // TODO add your handling code here:
+if (quantidade9 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade9--;
+        txtQuant1.setText("" + quantidade9);
+}
+    }//GEN-LAST:event_btnRem9ActionPerformed
+
+    private void btnRem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRem10ActionPerformed
+        // TODO add your handling code here:
+if (quantidade10 == 0) {
+            JOptionPane.showOptionDialog(null, "Não é possivel diminuir mais", "Alerta", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+        } else {
+        quantidade10--;
+        txtQuant1.setText("" + quantidade10);
+}
+    }//GEN-LAST:event_btnRem10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -670,5 +1172,15 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
     private javax.swing.JLabel lblPreco7;
     private javax.swing.JLabel lblPreco8;
     private javax.swing.JLabel lblPreco9;
+    private javax.swing.JTextField txtQuant1;
+    private javax.swing.JTextField txtQuant10;
+    private javax.swing.JTextField txtQuant2;
+    private javax.swing.JTextField txtQuant3;
+    private javax.swing.JTextField txtQuant4;
+    private javax.swing.JTextField txtQuant5;
+    private javax.swing.JTextField txtQuant6;
+    private javax.swing.JTextField txtQuant7;
+    private javax.swing.JTextField txtQuant8;
+    private javax.swing.JTextField txtQuant9;
     // End of variables declaration//GEN-END:variables
 }
