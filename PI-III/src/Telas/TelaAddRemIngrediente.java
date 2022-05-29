@@ -24,10 +24,9 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
         System.out.println(TelaDeCardapio.produto);
         listarItem(TelaDeCardapio.produto.get(TelaDeCardapio.produto.size() - 1));
         removerA();
+        idAd.removeAll(idAd);
+        valorAd.removeAll(valorAd);
         listarAdicionais();
-idAd.removeAll(idAd);
-valorAd.removeAll(valorAd);
-        System.out.println(idAd);
     }
 
     public int quantidade1 = 0, quantidade2 = 0, quantidade3 = 0, quantidade4 = 0,

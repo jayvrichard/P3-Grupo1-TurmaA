@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Classes;
 
@@ -8,7 +8,7 @@ package Classes;
  *
  * @author ruy_s
  */
-public interface Status {
+public class Local {
 
-    public abstract String status();
+    
 }
