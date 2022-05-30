@@ -54,7 +54,7 @@ public class Retirar extends Pedido {
             return "Em Preparo";
         } else if (status == 2) {
             return "Pronto";
-        } else if (status == 5) {
+        } else if (status == 3) {
             return "Entregue";
         } else if (status == 4) {
             return "Cancelado";
