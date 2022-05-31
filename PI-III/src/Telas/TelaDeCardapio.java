@@ -42,9 +42,10 @@ public class TelaDeCardapio extends javax.swing.JFrame {
     }
 
     private int countcat = 1, countProdMenor = 1, countProdMaior = 100;
+    private double valor1, valor2, valor3;
     private boolean adicional1, adicional2, adicional3;
-    public static ArrayList<Integer> produto = new ArrayList();
-    public static ArrayList<ItensPedido> retirar = new ArrayList();
+    public static ArrayList<Produto> produto = new ArrayList();
+    public static ArrayList<ItensPedido> item = new ArrayList();
 
     public void listarCategoria() {
         int count = 1;
@@ -112,6 +113,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     btnAdd1.setVisible(true);
                     adicional1 = l.isAdicional();
                     countProdMenor = l.getId();
+                    valor1 = l.getValor();
                     break;
                 case 2:
                     lblItem2.setText(" - " + l.getNome());
@@ -121,6 +123,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     btnAdd2.setVisible(true);
                     adicional2 = l.isAdicional();
                     countProdMaior = l.getId();
+                    valor2 = l.getValor();
                     break;
                 case 3:
                     lblItem3.setText(" - " + l.getNome());
@@ -130,6 +133,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     btnAdd3.setVisible(true);
                     adicional3 = l.isAdicional();
                     countProdMaior = l.getId();
+                    valor3 = l.getValor();
                     break;
             }
             count++;
@@ -954,7 +958,8 @@ public class TelaDeCardapio extends javax.swing.JFrame {
     private void btnAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
         // TODO add your handling code here:
         if (adicional1 == true) {
-            produto.add(Integer.parseInt(lblId1.getText()));
+            Produto p = new Produto(Integer.parseInt(lblId1.getText()), lblItem1.getText(), valor1);
+            produto.add(p);
             TelaAddRemIngrediente x = new TelaAddRemIngrediente();
             x.setVisible(true);
             this.dispose();
@@ -963,16 +968,22 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             int op = 0;
             op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
             if (op == 0) {
-                ItensPedido item = new ItensPedido(Integer.parseInt(lblId1.getText()), Double.parseDouble(lblPreco1.getText()));
-                produto.add(Integer.parseInt(lblId1.getText()));
+                Produto p = new Produto(Integer.parseInt(lblId1.getText()), lblItem1.getText(), valor1);
+                ItensPedido i = new ItensPedido(Integer.parseInt(lblId1.getText()), valor1, lblItem1.getText());
+                item.add(i);
+                produto.add(p);
+                JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho");
                 this.dispose();
                 TelaDeCardapio x = new TelaDeCardapio();
                 x.setVisible(true);
 
             } else {
-                ItensPedido item = new ItensPedido(Integer.parseInt(lblId1.getText()), Double.parseDouble(lblPreco1.getText()));
-                produto.add(Integer.parseInt(lblId1.getText()));
-                TelaDePagamento x = new TelaDePagamento();
+                Produto p = new Produto(Integer.parseInt(lblId1.getText()), lblItem1.getText(), valor1);
+                ItensPedido i = new ItensPedido(Integer.parseInt(lblId1.getText()), valor1, lblItem1.getText());
+                item.add(i);
+                produto.add(p);
+                JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho");
+                TelaDeSacola x = new TelaDeSacola();
                 x.setVisible(true);
                 this.dispose();
             }
@@ -982,7 +993,8 @@ public class TelaDeCardapio extends javax.swing.JFrame {
     private void btnAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd2ActionPerformed
         // TODO add your handling code here:
         if (adicional2 == true) {
-            produto.add(Integer.parseInt(lblId2.getText()));
+            Produto p = new Produto(Integer.parseInt(lblId2.getText()), lblItem2.getText(), valor2);
+            produto.add(p);
             TelaAddRemIngrediente x = new TelaAddRemIngrediente();
             x.setVisible(true);
             this.dispose();
@@ -991,16 +1003,22 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             int op = 0;
             op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
             if (op == 0) {
-                ItensPedido item = new ItensPedido(Integer.parseInt(lblId2.getText()), Double.parseDouble(lblPreco2.getText()));
-                produto.add(Integer.parseInt(lblId2.getText()));
+                Produto p = new Produto(Integer.parseInt(lblId2.getText()), lblItem2.getText(), valor2);
+                ItensPedido i = new ItensPedido(Integer.parseInt(lblId2.getText()), valor2, lblItem2.getText());
+                item.add(i);
+                produto.add(p);
+                JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho");
                 this.dispose();
                 TelaDeCardapio x = new TelaDeCardapio();
                 x.setVisible(true);
 
             } else {
-                ItensPedido item = new ItensPedido(Integer.parseInt(lblId2.getText()), Double.parseDouble(lblPreco2.getText()));
-                produto.add(Integer.parseInt(lblId2.getText()));
-                TelaDePagamento x = new TelaDePagamento();
+                Produto p = new Produto(Integer.parseInt(lblId2.getText()), lblItem2.getText(), valor2);
+                ItensPedido i = new ItensPedido(Integer.parseInt(lblId2.getText()), valor2, lblItem2.getText());
+                item.add(i);
+                produto.add(p);
+                JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho");
+                TelaDeSacola x = new TelaDeSacola();
                 x.setVisible(true);
                 this.dispose();
             }
@@ -1011,7 +1029,8 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         if (adicional3 == true) {
-            produto.add(Integer.parseInt(lblId3.getText()));
+            Produto p = new Produto(Integer.parseInt(lblId3.getText()), lblItem3.getText(), valor3);
+            produto.add(p);
             TelaAddRemIngrediente x = new TelaAddRemIngrediente();
             x.setVisible(true);
             this.dispose();
@@ -1020,16 +1039,22 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             int op = 0;
             op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
             if (op == 0) {
-                ItensPedido item = new ItensPedido(Integer.parseInt(lblId3.getText()), Double.parseDouble(lblPreco3.getText()));
-                produto.add(Integer.parseInt(lblId3.getText()));
+                Produto p = new Produto(Integer.parseInt(lblId3.getText()), lblItem3.getText(), valor3);
+                ItensPedido i = new ItensPedido(Integer.parseInt(lblId3.getText()), valor3, lblItem3.getText());
+                item.add(i);
+                produto.add(p);
+                JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho");
                 this.dispose();
                 TelaDeCardapio x = new TelaDeCardapio();
                 x.setVisible(true);
 
             } else {
-                ItensPedido item = new ItensPedido(Integer.parseInt(lblId3.getText()), Double.parseDouble(lblPreco3.getText()));
-                produto.add(Integer.parseInt(lblId3.getText()));
-                TelaDePagamento x = new TelaDePagamento();
+                Produto p = new Produto(Integer.parseInt(lblId3.getText()), lblItem3.getText(), valor3);
+                ItensPedido i = new ItensPedido(Integer.parseInt(lblId3.getText()), valor3, lblItem3.getText());
+                item.add(i);
+                produto.add(p);
+                JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho");
+                TelaDeSacola x = new TelaDeSacola();
                 x.setVisible(true);
                 this.dispose();
             }

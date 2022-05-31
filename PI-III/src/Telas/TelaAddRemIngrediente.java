@@ -8,6 +8,7 @@ package Telas;
 import Classes.Adicional;
 import Classes.CrudAdicional;
 import Classes.CrudProduto;
+import Classes.ItensPedido;
 import Classes.Produto;
 import java.awt.TextField;
 import java.util.ArrayList;
@@ -37,10 +38,13 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
     ArrayList<Double> valorAd = new ArrayList();
 
     public static ArrayList<Adicional> adicional = new ArrayList();
+    private String nome = TelaDeCardapio.produto.get(TelaDeCardapio.produto.size() - 1).getNome();
+    private int id = TelaDeCardapio.produto.get(TelaDeCardapio.produto.size() - 1).getId();
+    private double valor = TelaDeCardapio.produto.get(TelaDeCardapio.produto.size() - 1).getValor();
 
-    public void listarItem(int id) {
+    public void listarItem(Produto p) {
         CrudProduto lista = new CrudProduto();
-        for (Produto l : lista.mostrarItem(id)) {
+        for (Produto l : lista.mostrarItem(p.getId())) {
             lblNome.setText(l.getNome());
             lblDescricao.setText(l.getDescricao());
         }
@@ -935,79 +939,65 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
 
     private void btnConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluirActionPerformed
         // TODO add your handling code here:
+        String texto = "";
+        double valot = 0;
         if (quantidade1 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente1.getText());
-            a.setQuant(quantidade1);
-            a.setValor(valorAd.get(0));
-            adicional.add(a);
+            texto += " | " + quantidade1 + " - " + lblIngrediente1.getText() + "- R$" + (quantidade1 * valorAd.get(0) + " | ");
+            valot += quantidade1 * valorAd.get(0);
         }
         if (quantidade2 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente2.getText());
-            a.setQuant(quantidade2);
-            a.setValor(valorAd.get(1));
-            adicional.add(a);
+            texto += " | " + quantidade2 + " - " + lblIngrediente2.getText() + "- R$" + (quantidade2 * valorAd.get(1) + " | ");
+            valot += quantidade1 * valorAd.get(1);
         }
         if (quantidade3 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente3.getText());
-            a.setQuant(quantidade3);
-            a.setValor(valorAd.get(2));
-            adicional.add(a);
+            texto += " | " + quantidade3 + " - " + lblIngrediente3.getText() + "- R$" + (quantidade3 * valorAd.get(2) + " | ");
+            valot += quantidade1 * valorAd.get(2);
         }
         if (quantidade4 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente4.getText());
-            a.setQuant(quantidade4);
-            a.setValor(valorAd.get(3));
-            adicional.add(a);
+            texto += " | " + quantidade4 + " - " + lblIngrediente4.getText() + "- R$" + (quantidade4 * valorAd.get(3) + " | ");
+            valot += quantidade1 * valorAd.get(0);
         }
         if (quantidade5 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente5.getText());
-            a.setQuant(quantidade5);
-            a.setValor(valorAd.get(4));
-            adicional.add(a);
+            texto += " | " + quantidade5 + " - " + lblIngrediente5.getText() + "- R$" + (quantidade5 * valorAd.get(4) + " | ");
+            valot += quantidade1 * valorAd.get(0);
         }
         if (quantidade6 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente6.getText());
-            a.setQuant(quantidade6);
-            a.setValor(valorAd.get(5));
-            adicional.add(a);
+            texto += " | " + quantidade6 + " - " + lblIngrediente6.getText() + "- R$" + (quantidade6 * valorAd.get(5) + " | ");
+            valot += quantidade1 * valorAd.get(0);
         }
         if (quantidade7 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente7.getText());
-            a.setQuant(quantidade7);
-            a.setValor(valorAd.get(6));
-            adicional.add(a);
+            texto += " | " + quantidade7 + " - " + lblIngrediente7.getText() + "- R$" + (quantidade7 * valorAd.get(6) + " | ");
+            valot += quantidade1 * valorAd.get(0);
         }
         if (quantidade8 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente8.getText());
-            a.setQuant(quantidade8);
-            a.setValor(valorAd.get(7));
-            adicional.add(a);
+            texto += " | " + quantidade8 + " - " + lblIngrediente8.getText() + "- R$" + (quantidade8 * valorAd.get(7) + " | ");
+            valot += quantidade1 * valorAd.get(0);
         }
         if (quantidade9 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente9.getText());
-            a.setQuant(quantidade9);
-            a.setValor(valorAd.get(8));
-            adicional.add(a);
+            texto += " | " + quantidade9 + " - " + lblIngrediente9.getText() + "- R$" + (quantidade9 * valorAd.get(8) + " | ");
+            valot += quantidade1 * valorAd.get(0);
         }
         if (quantidade10 != 0) {
-            Adicional a = new Adicional();
-            a.setNome(lblIngrediente10.getText());
-            a.setQuant(quantidade10);
-            a.setValor(valorAd.get(9));
-            adicional.add(a);
+            texto += " | " + quantidade10 + " - " + lblIngrediente10.getText() + "- R$" + (quantidade10 * valorAd.get(9) + " | ");
+            valot += quantidade1 * valorAd.get(0);;
         }
-        TelaDePagamento x = new TelaDePagamento();
-        x.setVisible(true);
-        this.setVisible(false);
+        ItensPedido i = new ItensPedido(valor, valot, texto, nome);
+        TelaDeCardapio.item.add(i);
+        Object[] options = {"Sim", "Não"};
+        int op = 0;
+        op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (op == 0) {
+            JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho");
+            this.dispose();
+            TelaDeCardapio x = new TelaDeCardapio();
+            x.setVisible(true);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho");
+            TelaDeSacola x = new TelaDeSacola();
+            x.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnConcluirActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
