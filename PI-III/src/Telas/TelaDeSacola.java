@@ -197,6 +197,9 @@ public class TelaDeSacola extends javax.swing.JFrame {
 
     private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
         // TODO add your handling code here:
+        TelaDePagamento x = new TelaDePagamento();
+        x.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnPagamentoActionPerformed
 
     /**
