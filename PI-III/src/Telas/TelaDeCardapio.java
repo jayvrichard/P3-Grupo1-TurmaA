@@ -9,11 +9,8 @@ import Classes.Categoria;
 import Classes.CrudCategoria;
 import Classes.CrudProduto;
 import Classes.ItensPedido;
-import Classes.Pedido;
 import Classes.Produto;
-import Classes.Retirar;
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -43,12 +40,12 @@ public class TelaDeCardapio extends javax.swing.JFrame {
         listarCategoria();
         listarProduto(countcat, countProdMenor, countProdMaior);
     }
-    
+
     private int countcat = 1, countProdMenor = 1, countProdMaior = 100;
     private boolean adicional1, adicional2, adicional3;
     public static ArrayList<Integer> produto = new ArrayList();
     public static ArrayList<ItensPedido> retirar = new ArrayList();
-    
+
     public void listarCategoria() {
         int count = 1;
         CrudCategoria lista = new CrudCategoria();
@@ -61,7 +58,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 case 2:
                     lblCategoria2.setText(l.getNome());
                     jpCategoria2.setVisible(true);
-                    
+
                     break;
                 case 3:
                     lblCategoria3.setText(l.getNome());
@@ -97,14 +94,14 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                     break;
             }
             count++;
-            
+
         }
     }
-    
+
     public void listarProduto(int x, int y, int z) {
         int count = 1;
         CrudProduto lista = new CrudProduto();
-        
+
         for (Produto l : lista.mostrarProd(x, y, z)) {
             switch (count) {
                 case 1:
@@ -138,7 +135,7 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             count++;
         }
     }
-    
+
     public void limparItens() {
         lblItem1.setText("");
         lblPreco1.setText("");
@@ -966,12 +963,14 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             int op = 0;
             op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
             if (op == 0) {
+                ItensPedido item = new ItensPedido(Integer.parseInt(lblId1.getText()), Double.parseDouble(lblPreco1.getText()));
                 produto.add(Integer.parseInt(lblId1.getText()));
                 this.dispose();
                 TelaDeCardapio x = new TelaDeCardapio();
                 x.setVisible(true);
-                
+
             } else {
+                ItensPedido item = new ItensPedido(Integer.parseInt(lblId1.getText()), Double.parseDouble(lblPreco1.getText()));
                 produto.add(Integer.parseInt(lblId1.getText()));
                 TelaDePagamento x = new TelaDePagamento();
                 x.setVisible(true);
@@ -997,8 +996,9 @@ public class TelaDeCardapio extends javax.swing.JFrame {
                 this.dispose();
                 TelaDeCardapio x = new TelaDeCardapio();
                 x.setVisible(true);
-                
+
             } else {
+                ItensPedido item = new ItensPedido(Integer.parseInt(lblId2.getText()), Double.parseDouble(lblPreco2.getText()));
                 produto.add(Integer.parseInt(lblId2.getText()));
                 TelaDePagamento x = new TelaDePagamento();
                 x.setVisible(true);
@@ -1020,12 +1020,14 @@ public class TelaDeCardapio extends javax.swing.JFrame {
             int op = 0;
             op = JOptionPane.showOptionDialog(null, "Deseja continuar comprando", "Carrinho", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
             if (op == 0) {
+                ItensPedido item = new ItensPedido(Integer.parseInt(lblId3.getText()), Double.parseDouble(lblPreco3.getText()));
                 produto.add(Integer.parseInt(lblId3.getText()));
                 this.dispose();
                 TelaDeCardapio x = new TelaDeCardapio();
                 x.setVisible(true);
-                
+
             } else {
+                ItensPedido item = new ItensPedido(Integer.parseInt(lblId3.getText()), Double.parseDouble(lblPreco3.getText()));
                 produto.add(Integer.parseInt(lblId3.getText()));
                 TelaDePagamento x = new TelaDePagamento();
                 x.setVisible(true);
