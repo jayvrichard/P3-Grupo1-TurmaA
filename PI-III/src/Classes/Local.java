@@ -5,7 +5,7 @@
 package Classes;
 
 import java.sql.Time;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -26,6 +26,8 @@ public class Local extends Pedido {
     public Local(int senha) {
         this.senha = senha;
     }
+
+    
 
     public int getSenha() {
         return senha;

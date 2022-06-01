@@ -981,7 +981,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
             texto += " | " + quantidade10 + " - " + lblIngrediente10.getText() + "- R$" + (quantidade10 * valorAd.get(9) + " | ");
             valot += quantidade1 * valorAd.get(0);;
         }
-        ItensPedido i = new ItensPedido(valor, valot, texto, nome);
+        ItensPedido i = new ItensPedido(id, valor, valot, texto, nome);
         TelaDeCardapio.item.add(i);
         Object[] options = {"Sim", "Não"};
         int op = 0;

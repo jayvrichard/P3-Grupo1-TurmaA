@@ -4,10 +4,16 @@
  */
 package Telas;
 
+import Classes.CrudPedido;
 import Classes.ItensPedido;
-import Classes.Produto;
+import Classes.Local;
+import Classes.Retirar;
 import static Telas.TelaDeCardapio.item;
 import static Telas.TelaDeCardapio.produto;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +28,8 @@ public class TelaDePagamento extends javax.swing.JFrame {
     public TelaDePagamento() {
         initComponents();
     }
+
+    public static int senha = 100;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -212,10 +220,65 @@ public class TelaDePagamento extends javax.swing.JFrame {
         int op = 0;
         op = JOptionPane.showOptionDialog(null, "Deseja Comprar por pix ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (op == 0) {
-            JOptionPane.showMessageDialog(null, "Comanda emitida");
-            this.dispose();
-            TelaDeCardapio x = new TelaDeCardapio();
-            x.setVisible(true);
+            if (frmPedido.tipo == 1) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Local local = new Local();
+                    local.setData(Date.valueOf(LocalDate.now()));
+                    local.setHora(Time.valueOf(LocalTime.now()));
+                    local.setValor(vt);
+                    local.setPagamento("PIX");
+                    local.setSenha(senha);
+                    senha++;
+                    System.out.println(inserir.inserir(local));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            } else if (frmPedido.tipo == 2) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Retirar retirar = new Retirar();
+                    retirar.setData(Date.valueOf(LocalDate.now()));
+                    retirar.setHora(Time.valueOf(LocalTime.now()));
+                    retirar.setValor(vt);
+                    retirar.setPagamento("PIX");
+                    retirar.setNome(JOptionPane.showInputDialog("Insira o Nome"));
+                    retirar.setHoraRetirar(JOptionPane.showInputDialog("Insira a hora da retirada"));
+                    System.out.println(inserir.inserir(retirar));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            }
         }
     }//GEN-LAST:event_btnPixActionPerformed
 
@@ -225,10 +288,66 @@ public class TelaDePagamento extends javax.swing.JFrame {
         int op = 0;
         op = JOptionPane.showOptionDialog(null, "Deseja Comprar por Debito ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (op == 0) {
-            JOptionPane.showMessageDialog(null, "Comanda emitida");
-            this.dispose();
-            TelaDeCardapio x = new TelaDeCardapio();
-            x.setVisible(true);
+            if (frmPedido.tipo == 1) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Local local = new Local();
+                    local.setData(Date.valueOf(LocalDate.now()));
+                    local.setHora(Time.valueOf(LocalTime.now()));
+                    local.setValor(vt);
+                    local.setPagamento("Debito");
+                    local.setSenha(senha);
+                    senha++;
+                    System.out.println(inserir.inserir(local));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            } else if (frmPedido.tipo == 2) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Retirar retirar = new Retirar();
+                    retirar.setData(Date.valueOf(LocalDate.now()));
+                    retirar.setHora(Time.valueOf(LocalTime.now()));
+                    retirar.setValor(vt);
+                    retirar.setPagamento("Debito");
+                    retirar.setNome(JOptionPane.showInputDialog("Insira o Nome"));
+                    retirar.setHoraRetirar(JOptionPane.showInputDialog("Insira a hora da retirada"));
+                    System.out.println(inserir.inserir(retirar));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            }
         }
     }//GEN-LAST:event_btnDebitoActionPerformed
 
@@ -238,10 +357,65 @@ public class TelaDePagamento extends javax.swing.JFrame {
         int op = 0;
         op = JOptionPane.showOptionDialog(null, "Deseja Comprar por Dinheiro ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (op == 0) {
-            JOptionPane.showMessageDialog(null, "Comanda emitida");
-            this.dispose();
-            TelaDeCardapio x = new TelaDeCardapio();
-            x.setVisible(true);
+            if (frmPedido.tipo == 1) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Local local = new Local();
+                    local.setData(Date.valueOf(LocalDate.now()));
+                    local.setHora(Time.valueOf(LocalTime.now()));
+                    local.setValor(vt);
+                    local.setPagamento("Dinheiro");
+                    local.setSenha(senha);
+                    senha++;
+                    System.out.println(inserir.inserir(local));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            } else if (frmPedido.tipo == 2) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Retirar retirar = new Retirar();
+                    retirar.setData(Date.valueOf(LocalDate.now()));
+                    retirar.setHora(Time.valueOf(LocalTime.now()));
+                    retirar.setValor(vt);
+                    retirar.setPagamento("Dinheiro");
+                    retirar.setNome(JOptionPane.showInputDialog("Insira o Nome"));
+                    retirar.setHoraRetirar(JOptionPane.showInputDialog("Insira a hora da retirada"));
+                    System.out.println(inserir.inserir(retirar));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            }
         }
     }//GEN-LAST:event_btnDinheiroActionPerformed
 
@@ -251,10 +425,65 @@ public class TelaDePagamento extends javax.swing.JFrame {
         int op = 0;
         op = JOptionPane.showOptionDialog(null, "Deseja Comprar por VR ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (op == 0) {
-            JOptionPane.showMessageDialog(null, "Comanda emitida");
-            this.dispose();
-            TelaDeCardapio x = new TelaDeCardapio();
-            x.setVisible(true);
+            if (frmPedido.tipo == 1) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Local local = new Local();
+                    local.setData(Date.valueOf(LocalDate.now()));
+                    local.setHora(Time.valueOf(LocalTime.now()));
+                    local.setValor(vt);
+                    local.setPagamento("VR");
+                    local.setSenha(senha);
+                    senha++;
+                    System.out.println(inserir.inserir(local));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            } else if (frmPedido.tipo == 2) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Retirar retirar = new Retirar();
+                    retirar.setData(Date.valueOf(LocalDate.now()));
+                    retirar.setHora(Time.valueOf(LocalTime.now()));
+                    retirar.setValor(vt);
+                    retirar.setPagamento("VR");
+                    retirar.setNome(JOptionPane.showInputDialog("Insira o Nome"));
+                    retirar.setHoraRetirar(JOptionPane.showInputDialog("Insira a hora da retirada"));
+                    System.out.println(inserir.inserir(retirar));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            }
         }
     }//GEN-LAST:event_btnVrActionPerformed
 
@@ -264,10 +493,65 @@ public class TelaDePagamento extends javax.swing.JFrame {
         int op = 0;
         op = JOptionPane.showOptionDialog(null, "Deseja Comprar por Credito ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (op == 0) {
-            JOptionPane.showMessageDialog(null, "Comanda emitida");
-            this.dispose();
-            TelaDeCardapio x = new TelaDeCardapio();
-            x.setVisible(true);
+            if (frmPedido.tipo == 1) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Local local = new Local();
+                    local.setData(Date.valueOf(LocalDate.now()));
+                    local.setHora(Time.valueOf(LocalTime.now()));
+                    local.setValor(vt);
+                    local.setPagamento("Credito");
+                    local.setSenha(senha);
+                    senha++;
+                    System.out.println(inserir.inserir(local));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            } else if (frmPedido.tipo == 2) {
+                double vt = 0;
+                for (ItensPedido i : TelaDeCardapio.item) {
+                    vt += i.valorTotal(i);
+                };
+                System.out.println(vt);
+                try {
+                    Classes.CrudPedido inserir = new Classes.CrudPedido();
+                    Retirar retirar = new Retirar();
+                    retirar.setData(Date.valueOf(LocalDate.now()));
+                    retirar.setHora(Time.valueOf(LocalTime.now()));
+                    retirar.setValor(vt);
+                    retirar.setPagamento("Credito");
+                    retirar.setNome(JOptionPane.showInputDialog("Insira o Nome"));
+                    retirar.setHoraRetirar(JOptionPane.showInputDialog("Insira a hora da retirada"));
+                    System.out.println(inserir.inserir(retirar));
+                    Classes.CrudPedido inserir2 = new Classes.CrudPedido();
+                    for (ItensPedido i : TelaDeCardapio.item) {
+                        System.out.println(inserir2.inserir(i));
+                    };
+                    JOptionPane.showMessageDialog(null, "Comanda emitida");
+                    produto.removeAll(produto);
+                    item.removeAll(item);
+                    frmPedido x = new frmPedido();
+                    x.setVisible(true);
+                    this.dispose();
+                } catch (NullPointerException ex) {
+                    System.err.println("Erro: " + ex);
+                }
+            }
         }
     }//GEN-LAST:event_btnCreditoActionPerformed
 

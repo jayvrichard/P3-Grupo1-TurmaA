@@ -4,8 +4,9 @@
  */
 package Classes;
 
+
+import java.sql.Date;
 import java.sql.Time;
-import java.util.Date;
 
 /**
  *
@@ -14,18 +15,18 @@ import java.util.Date;
 public class Retirar extends Pedido {
 
     private String nome;
-    private Time horaRetirar;
+    private String horaRetirar;
 
     public Retirar() {
     }
 
-    public Retirar(String nome, Time horaRetirar, int id, int status, Date data, Time hora, Double valor, String pagamento) {
+    public Retirar(String nome, String horaRetirar, int id, int status, Date data, Time hora, Double valor, String pagamento) {
         super(id, status, data, hora, valor, pagamento);
         this.nome = nome;
         this.horaRetirar = horaRetirar;
     }
 
-    public Retirar(String nome, Time horaRetirar) {
+    public Retirar(String nome, String horaRetirar) {
         this.nome = nome;
         this.horaRetirar = horaRetirar;
     }
@@ -38,11 +39,11 @@ public class Retirar extends Pedido {
         this.nome = nome;
     }
 
-    public Time getHoraRetirar() {
+    public String getHoraRetirar() {
         return horaRetirar;
     }
 
-    public void setHoraRetirar(Time horaRetirar) {
+    public void setHoraRetirar(String horaRetirar) {
         this.horaRetirar = horaRetirar;
     }
 

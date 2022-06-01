@@ -29,8 +29,8 @@ public class ItensPedido {
         this.nome = nome;
     }
 
-    public ItensPedido(int idPedido, double valorProduto, String nome) {
-        this.idPedido = idPedido;
+    public ItensPedido(int idProduto, double valorProduto, String nome) {
+        this.idProduto = idProduto;
         this.valorProduto = valorProduto;
         this.nome = nome;
     }
@@ -53,6 +53,21 @@ public class ItensPedido {
         this.valorProduto = valorProduto;
         this.valorAdicional = valorAdicional;
         this.adicional = adicional;
+    }
+
+    public ItensPedido(int idProduto, double valorProduto, double valorAdicional, String adicional, String nome) {
+        this.idProduto = idProduto;
+        this.valorProduto = valorProduto;
+        this.valorAdicional = valorAdicional;
+        this.adicional = adicional;
+        this.nome = nome;
+    }
+
+    public ItensPedido(int idProduto, double valorAdicional, String adicional, String nome) {
+        this.idProduto = idProduto;
+        this.valorAdicional = valorAdicional;
+        this.adicional = adicional;
+        this.nome = nome;
     }
 
     public String getNome() {
