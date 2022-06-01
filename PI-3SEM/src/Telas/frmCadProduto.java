@@ -155,6 +155,7 @@ public class frmCadProduto extends javax.swing.JFrame {
 
         btnCadastrar.setBackground(new java.awt.Color(102, 255, 0));
         btnCadastrar.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/verifica.png"))); // NOI18N
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -353,7 +354,7 @@ public class frmCadProduto extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(lblPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
