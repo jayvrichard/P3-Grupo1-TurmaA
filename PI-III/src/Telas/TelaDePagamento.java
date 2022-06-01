@@ -4,6 +4,12 @@
  */
 package Telas;
 
+import Classes.ItensPedido;
+import Classes.Produto;
+import static Telas.TelaDeCardapio.item;
+import static Telas.TelaDeCardapio.produto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ruy_s
@@ -194,36 +200,88 @@ public class TelaDePagamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRetornoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornoActionPerformed
-        TelaDeCardapio x = new TelaDeCardapio();
+        TelaDeSacola x = new TelaDeSacola();
         x.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRetornoActionPerformed
 
     private void btnPixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPixActionPerformed
         // TODO add your handling code here:
-        
+        Object[] options = {"Sim", "Não"};
+        int op = 0;
+        op = JOptionPane.showOptionDialog(null, "Deseja Comprar por pix ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (op == 0) {
+            JOptionPane.showMessageDialog(null, "Comanda emitida");
+            this.dispose();
+            TelaDeCardapio x = new TelaDeCardapio();
+            x.setVisible(true);
+        }
     }//GEN-LAST:event_btnPixActionPerformed
 
     private void btnDebitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDebitoActionPerformed
         // TODO add your handling code here:
-        
+        Object[] options = {"Sim", "Não"};
+        int op = 0;
+        op = JOptionPane.showOptionDialog(null, "Deseja Comprar por Debito ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (op == 0) {
+            JOptionPane.showMessageDialog(null, "Comanda emitida");
+            this.dispose();
+            TelaDeCardapio x = new TelaDeCardapio();
+            x.setVisible(true);
+        }
     }//GEN-LAST:event_btnDebitoActionPerformed
 
     private void btnDinheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDinheiroActionPerformed
         // TODO add your handling code here:
-        
+        Object[] options = {"Sim", "Não"};
+        int op = 0;
+        op = JOptionPane.showOptionDialog(null, "Deseja Comprar por Dinheiro ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (op == 0) {
+            JOptionPane.showMessageDialog(null, "Comanda emitida");
+            this.dispose();
+            TelaDeCardapio x = new TelaDeCardapio();
+            x.setVisible(true);
+        }
     }//GEN-LAST:event_btnDinheiroActionPerformed
 
     private void btnVrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVrActionPerformed
         // TODO add your handling code here:
+        Object[] options = {"Sim", "Não"};
+        int op = 0;
+        op = JOptionPane.showOptionDialog(null, "Deseja Comprar por VR ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (op == 0) {
+            JOptionPane.showMessageDialog(null, "Comanda emitida");
+            this.dispose();
+            TelaDeCardapio x = new TelaDeCardapio();
+            x.setVisible(true);
+        }
     }//GEN-LAST:event_btnVrActionPerformed
 
     private void btnCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditoActionPerformed
         // TODO add your handling code here:
+        Object[] options = {"Sim", "Não"};
+        int op = 0;
+        op = JOptionPane.showOptionDialog(null, "Deseja Comprar por Credito ?", "Pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (op == 0) {
+            JOptionPane.showMessageDialog(null, "Comanda emitida");
+            this.dispose();
+            TelaDeCardapio x = new TelaDeCardapio();
+            x.setVisible(true);
+        }
     }//GEN-LAST:event_btnCreditoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
+        Object[] options = {"Sim", "Não"};
+        int op = 0;
+        op = JOptionPane.showOptionDialog(null, "Deseja Cancelar a compra", "Cancelar", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (op == 0) {
+            produto.removeAll(produto);
+            item.removeAll(item);
+            frmPedido x = new frmPedido();
+            x.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

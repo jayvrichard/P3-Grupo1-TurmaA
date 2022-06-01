@@ -5,6 +5,8 @@
  */
 package Telas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bruno Sousa
@@ -17,6 +19,7 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
     }
+    public static int acesso = 0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,12 +33,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jpItem1 = new javax.swing.JPanel();
-        lblILogoInicial = new javax.swing.JLabel();
         btnAcessar = new javax.swing.JButton();
         lblSenha = new javax.swing.JLabel();
         txtSenha = new javax.swing.JTextField();
         lblLogin = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JTextField();
+        cbxLogin = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 0));
@@ -48,15 +50,15 @@ public class TelaLogin extends javax.swing.JFrame {
         jpItem1.setBackground(new java.awt.Color(51, 51, 51));
         jpItem1.setForeground(new java.awt.Color(102, 102, 102));
 
-        lblILogoInicial.setBackground(new java.awt.Color(255, 255, 255));
-        lblILogoInicial.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblILogoInicial.setForeground(new java.awt.Color(255, 255, 255));
-        lblILogoInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo3_1.png"))); // NOI18N
-
         btnAcessar.setBackground(new java.awt.Color(255, 165, 24));
-        btnAcessar.setFont(new java.awt.Font("Wide Latin", 1, 18)); // NOI18N
+        btnAcessar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnAcessar.setText("Acessar");
         btnAcessar.setToolTipText("");
+        btnAcessar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcessarActionPerformed(evt);
+            }
+        });
 
         lblSenha.setFont(new java.awt.Font("Wide Latin", 0, 36)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,22 +68,15 @@ public class TelaLogin extends javax.swing.JFrame {
         txtSenha.setBackground(new java.awt.Color(240, 240, 240));
         txtSenha.setFont(new java.awt.Font("Wide Latin", 0, 22)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(204, 204, 204));
-        txtSenha.setText("digite sua senha");
 
         lblLogin.setFont(new java.awt.Font("Wide Latin", 0, 36)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(255, 255, 255));
         lblLogin.setText("LOGIN:");
         lblLogin.setToolTipText("");
 
-        txtCpf.setBackground(new java.awt.Color(240, 240, 240));
-        txtCpf.setFont(new java.awt.Font("Wide Latin", 0, 24)); // NOI18N
-        txtCpf.setForeground(new java.awt.Color(204, 204, 204));
-        txtCpf.setText("CPF");
-        txtCpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCpfActionPerformed(evt);
-            }
-        });
+        cbxLogin.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        cbxLogin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Loja", "Cliente" }));
+        cbxLogin.setToolTipText("");
 
         javax.swing.GroupLayout jpItem1Layout = new javax.swing.GroupLayout(jpItem1);
         jpItem1.setLayout(jpItem1Layout);
@@ -91,34 +86,32 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jpItem1Layout.createSequentialGroup()
+                    .addGroup(jpItem1Layout.createSequentialGroup()
+                        .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblSenha)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpItem1Layout.createSequentialGroup()
-                            .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(lblILogoInicial, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(553, 553, 553))
         );
         jpItem1Layout.setVerticalGroup(
             jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpItem1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblILogoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(159, 159, 159)
                 .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jpItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblSenha)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(btnAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
+                    .addGroup(jpItem1Layout.createSequentialGroup()
+                        .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)))
+                .addGap(18, 18, 18)
+                .addComponent(btnAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -135,7 +128,7 @@ public class TelaLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(107, 107, 107)
                 .addComponent(jpItem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -170,9 +163,26 @@ public class TelaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
+    private void btnAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcessarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCpfActionPerformed
+
+        if (cbxLogin.getSelectedItem().equals("Loja") && txtSenha.getText().equals("123loja")) {
+            acesso = 1;
+            TelaInicial x = new TelaInicial();
+            x.setVisible(true);
+            this.setVisible(false);
+        } else if (cbxLogin.getSelectedItem().equals("Cliente") && txtSenha.getText().equals("123cliente")) {
+            acesso = 2;
+            frmPedido x = new frmPedido();
+            x.setVisible(true);
+            this.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "Insira a senha correta");
+            txtSenha.setText("");
+        }
+
+
+    }//GEN-LAST:event_btnAcessarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,13 +224,12 @@ public class TelaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAcessar;
+    private javax.swing.JComboBox<String> cbxLogin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jpItem1;
-    private javax.swing.JLabel lblILogoInicial;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblSenha;
-    private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

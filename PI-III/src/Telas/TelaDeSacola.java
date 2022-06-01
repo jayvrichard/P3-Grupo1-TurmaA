@@ -5,7 +5,10 @@
 package Telas;
 
 import Classes.ItensPedido;
+import static Telas.TelaDeCardapio.item;
+import static Telas.TelaDeCardapio.produto;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -184,9 +187,16 @@ public class TelaDeSacola extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRetornoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornoActionPerformed
-        TelaDeCardapio x = new TelaDeCardapio();
-        x.setVisible(true);
-        this.dispose();
+        Object[] options = {"Sim", "Não"};
+        int op = 0;
+        op = JOptionPane.showOptionDialog(null, "Deseja Cancelar a compra", "Cancelar", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (op == 0) {
+            produto.removeAll(produto);
+            item.removeAll(item);
+            frmPedido x = new frmPedido();
+            x.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnRetornoActionPerformed
 
     private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
