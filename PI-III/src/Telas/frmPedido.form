@@ -52,10 +52,10 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
-                  <Component id="btnEncomenda" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Component id="btnEncomenda" pref="250" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                  <Component id="btnLocal" min="-2" pref="250" max="-2" attributes="0"/>
-                  <EmptySpace pref="427" max="32767" attributes="0"/>
+                  <Component id="btnLocal" pref="250" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="427" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -69,10 +69,10 @@
                   </Group>
                   <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnEncomenda" alignment="3" min="-2" pref="354" max="-2" attributes="0"/>
-                      <Component id="btnLocal" alignment="3" min="-2" pref="354" max="-2" attributes="0"/>
+                      <Component id="btnEncomenda" alignment="3" max="32767" attributes="0"/>
+                      <Component id="btnLocal" alignment="3" pref="354" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="225" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
