@@ -61,7 +61,7 @@
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="btnDinheiro" pref="250" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnPix" pref="250" max="32767" attributes="0"/>
+                                  <Component id="btnPix" min="-2" pref="250" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="btnVr" pref="250" max="32767" attributes="0"/>
                               </Group>
@@ -80,10 +80,10 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnPix" alignment="3" max="32767" attributes="0"/>
+                      <Component id="btnPix" alignment="3" min="-2" pref="354" max="-2" attributes="0"/>
                       <Component id="btnDebito" alignment="3" max="32767" attributes="0"/>
                       <Component id="btnDinheiro" alignment="3" max="32767" attributes="0"/>
-                      <Component id="btnVr" alignment="3" pref="354" max="32767" attributes="0"/>
+                      <Component id="btnVr" alignment="3" max="32767" attributes="0"/>
                       <Component id="btnCredito" alignment="3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>

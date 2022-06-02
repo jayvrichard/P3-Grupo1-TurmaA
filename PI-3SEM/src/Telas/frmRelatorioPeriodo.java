@@ -5,7 +5,11 @@
  */
 package Telas;
 
+import Classes.CrudPedido;
+import Classes.Pedido;
+import Classes.Retirar;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author natan
@@ -17,6 +21,22 @@ public class frmRelatorioPeriodo extends javax.swing.JFrame {
      */
     public frmRelatorioPeriodo() {
         initComponents();
+    }
+
+    public void ListarDesc(String desc, String desc2) {
+        DefaultTableModel modelo = (DefaultTableModel) jtRelatorio.getModel();
+        modelo.setNumRows(0);
+        CrudPedido lista = new CrudPedido();
+
+        for (Pedido l : lista.mostrar(desc, desc2)) {
+            String[] d1 = String.valueOf(l.getData()).split("-");
+            modelo.addRow(new Object[]{
+                l.getId(),
+                d1[2] + "/" + d1[1] + "/" + d1[0],
+                l.getHora(),
+                "R$" + l.getValor() + "0",
+                l.getPagamento(),});
+        }
     }
 
     /**
@@ -47,11 +67,11 @@ public class frmRelatorioPeriodo extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CODIGO", "DATA", "VALOR", "PAGAMENTO"
+                "CODIGO", "DATA", "HORA", "VALOR", "PAGAMENTO", "EXTRA"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -99,6 +119,11 @@ public class frmRelatorioPeriodo extends javax.swing.JFrame {
         txtdataFinal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
         btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -181,14 +206,26 @@ public class frmRelatorioPeriodo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornarActionPerformed
-      
+        TelaRelatorio tela = new TelaRelatorio();
+        tela.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnRetornarActionPerformed
 
     private void btnRetornarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetornarMouseClicked
-        TelaRelatorio tela = new  TelaRelatorio();
+        TelaRelatorio tela = new TelaRelatorio();
         tela.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRetornarMouseClicked
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        // TODO add your handling code here:
+        CrudPedido x = new CrudPedido();
+        System.out.println(txtdataInicial.getText());
+        String[] d1 = txtdataInicial.getText().split("/"), d2 = txtdataFinal.getText().split("/");
+        String data1 = d1[2] + "-" + d1[1] + "-" + d1[0], data2 = d2[2] + "-" + d2[1] + "-" + d2[0];
+        System.out.println(data1);
+        ListarDesc(data1, data2);
+    }//GEN-LAST:event_btnPesquisarActionPerformed
 
     /**
      * @param args the command line arguments

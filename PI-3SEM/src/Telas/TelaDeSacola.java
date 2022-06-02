@@ -28,14 +28,16 @@ public class TelaDeSacola extends javax.swing.JFrame {
     public void listarSacola(List<ItensPedido> x) {
         DefaultTableModel modelo = (DefaultTableModel) jtbSacola.getModel();
         modelo.setNumRows(0);
-
+        double vt = 0;
         for (ItensPedido l : x) {
+            vt += l.valorTotal(l);
             modelo.addRow(new Object[]{
                 l.getNome(),
                 l.getAdicional(),
                 l.valorTotal(l)
             });
         }
+        lblValorT.setText("Valor Total: R$" + vt + "0");
     }
 
     /**
@@ -55,14 +57,16 @@ public class TelaDeSacola extends javax.swing.JFrame {
         btnPagamento = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbSacola = new javax.swing.JTable();
+        btnCancelar = new javax.swing.JButton();
+        lblValorT = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 102, 0));
 
-        btnRetorno.setBackground(new java.awt.Color(255, 255, 255));
+        btnRetorno.setBackground(new java.awt.Color(255, 51, 0));
         btnRetorno.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        btnRetorno.setText("Retornar");
+        btnRetorno.setText("Cancelar");
         btnRetorno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRetorno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +77,7 @@ public class TelaDeSacola extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel1.setText("Sacola");
+        jLabel1.setText("Carrinho");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -131,14 +135,29 @@ public class TelaDeSacola extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtbSacola);
 
+        btnCancelar.setBackground(new java.awt.Color(255, 165, 24));
+        btnCancelar.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        btnCancelar.setText("Retornar");
+        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
+        lblValorT.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lblValorT.setText("Valor Total:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(42, 42, 42)
+                .addComponent(btnCancelar)
+                .addGap(54, 54, 54)
                 .addComponent(btnRetorno, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 839, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(204, 204, 204))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -146,11 +165,16 @@ public class TelaDeSacola extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1007, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRetirar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115))
+                .addContainerGap(102, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1007, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRetirar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(115, 115, 115))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblValorT)
+                        .addGap(411, 411, 411))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,11 +187,18 @@ public class TelaDeSacola extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(btnRetirar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
+                .addComponent(lblValorT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRetorno)
-                    .addComponent(btnPagamento))
-                .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnPagamento)
+                        .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCancelar)
+                            .addComponent(btnRetorno))
+                        .addGap(49, 49, 49))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,6 +242,13 @@ public class TelaDeSacola extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnPagamentoActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        TelaDeCardapio x = new TelaDeCardapio();
+        x.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -248,6 +286,7 @@ public class TelaDeSacola extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnPagamento;
     private javax.swing.JButton btnRetirar;
     private javax.swing.JButton btnRetorno;
@@ -256,5 +295,6 @@ public class TelaDeSacola extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jtbSacola;
+    private javax.swing.JLabel lblValorT;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,11 @@
  */
 package Telas;
 
+import Classes.CrudPedido;
+import Classes.Pedido;
+import java.time.LocalDate;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author natan
@@ -17,6 +21,17 @@ public class TelaRelatorio extends javax.swing.JFrame {
      */
     public TelaRelatorio() {
         initComponents();
+        ListarDesc(String.valueOf(LocalDate.now()), String.valueOf(LocalDate.now()));
+    }
+
+    public void ListarDesc(String desc, String desc2) {
+        CrudPedido lista = new CrudPedido();
+        double vt = 0;
+        for (Pedido l : lista.mostrar(desc, desc2)) {
+            vt += l.getValor();
+            lblUltima.setText("Ultimo venda: R$" + l.getValor() + "0");
+        }
+        lblDia.setText("Saldo do Dia:R$" + vt + "0");
     }
 
     /**
@@ -32,14 +47,13 @@ public class TelaRelatorio extends javax.swing.JFrame {
         btnRelatorioPeriodo = new javax.swing.JButton();
         btnRelatorioVenda = new javax.swing.JButton();
         btnRetornar = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblDia = new javax.swing.JLabel();
+        lblUltima = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        PainelRelatorio.setBackground(new java.awt.Color(255, 102, 0));
 
         btnRelatorioPeriodo.setBackground(new java.awt.Color(51, 102, 255));
         btnRelatorioPeriodo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -84,62 +98,35 @@ public class TelaRelatorio extends javax.swing.JFrame {
             }
         });
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        jLabel6.setText("Venda Mensal:R$2358,00");
+        lblDia.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        lblDia.setForeground(new java.awt.Color(255, 255, 255));
+        lblDia.setText("Saldo do Dia:R$56,00");
 
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        jLabel5.setText("Venda Semanal:R$256,00");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addGap(46, 46, 46))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(28, 28, 28))
-        );
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        jLabel4.setText("Saldo do Dia:R$56,00");
-
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        jLabel3.setText("Ultimo venda: R$12,00");
+        lblUltima.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        lblUltima.setForeground(new java.awt.Color(255, 255, 255));
+        lblUltima.setText("Ultimo venda: R$12,00");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(lblUltima)
+                .addGap(76, 76, 76)
+                .addComponent(lblDia)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addContainerGap())
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUltima)
+                    .addComponent(lblDia))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PainelRelatorioLayout = new javax.swing.GroupLayout(PainelRelatorio);
@@ -158,15 +145,12 @@ public class TelaRelatorio extends javax.swing.JFrame {
                 .addGap(301, 301, 301))
             .addGroup(PainelRelatorioLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         PainelRelatorioLayout.setVerticalGroup(
             PainelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelRelatorioLayout.createSequentialGroup()
-                .addGroup(PainelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(201, 201, 201)
                 .addGroup(PainelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRelatorioVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,22 +172,27 @@ public class TelaRelatorio extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRelatorioPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioPeriodoActionPerformed
-        
+        frmRelatorioPeriodo tela = new frmRelatorioPeriodo();
+        tela.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnRelatorioPeriodoActionPerformed
 
     private void btnRelatorioVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioVendaActionPerformed
-        
+        frmRelatorioVenda tela = new frmRelatorioVenda();
+        tela.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnRelatorioVendaActionPerformed
 
     private void btnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornarActionPerformed
-        
+
     }//GEN-LAST:event_btnRetornarActionPerformed
 
     private void btnRetornarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetornarMouseClicked
-        TelaInicial tela = new  TelaInicial();
+        TelaInicial tela = new TelaInicial();
         tela.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRetornarMouseClicked
@@ -260,11 +249,8 @@ public class TelaRelatorio extends javax.swing.JFrame {
     private javax.swing.JButton btnRelatorioPeriodo;
     private javax.swing.JButton btnRelatorioVenda;
     private javax.swing.JButton btnRetornar;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lblDia;
+    private javax.swing.JLabel lblUltima;
     // End of variables declaration//GEN-END:variables
 }

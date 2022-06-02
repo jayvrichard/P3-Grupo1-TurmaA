@@ -59,7 +59,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente1.setVisible(true);
                     lblIngrediente1.setText(l.getId() + " - " + l.getNome());
                     lblPreco1.setVisible(true);
-                    lblPreco1.setText(l.getNome());
+                    lblPreco1.setText("R$"+l.getValor()+"0");
                     btnAdd1.setVisible(true);
                     btnRem1.setVisible(true);
                     txtQuant1.setVisible(true);
@@ -70,7 +70,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente2.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente2.setVisible(true);
                     lblPreco2.setVisible(true);
-                    lblPreco2.setText(l.getNome());
+                    lblPreco2.setText("R$"+l.getValor()+"0");
                     btnAdd2.setVisible(true);
                     btnRem2.setVisible(true);
                     txtQuant2.setVisible(true);
@@ -81,7 +81,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente3.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente3.setVisible(true);
                     lblPreco3.setVisible(true);
-                    lblPreco3.setText(l.getNome());
+                    lblPreco3.setText("R$"+l.getValor()+"0");
                     btnAdd3.setVisible(true);
                     btnRem3.setVisible(true);
                     txtQuant3.setVisible(true);
@@ -92,7 +92,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente4.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente4.setVisible(true);
                     lblPreco4.setVisible(true);
-                    lblPreco4.setText(l.getNome());
+                    lblPreco4.setText("R$"+l.getValor()+"0");
                     btnAdd4.setVisible(true);
                     btnRem4.setVisible(true);
                     txtQuant4.setVisible(true);
@@ -103,7 +103,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente5.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente5.setVisible(true);
                     lblPreco5.setVisible(true);
-                    lblPreco5.setText(l.getNome());
+                    lblPreco5.setText("R$"+l.getValor()+"0");
                     btnAdd5.setVisible(true);
                     btnRem5.setVisible(true);
                     txtQuant5.setVisible(true);
@@ -114,7 +114,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente6.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente6.setVisible(true);
                     lblPreco6.setVisible(true);
-                    lblPreco6.setText(l.getNome());
+                    lblPreco6.setText("R$"+l.getValor()+"0");
                     btnAdd6.setVisible(true);
                     btnRem6.setVisible(true);
                     txtQuant6.setVisible(true);
@@ -125,7 +125,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente7.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente7.setVisible(true);
                     lblPreco7.setVisible(true);
-                    lblPreco7.setText(l.getNome());
+                    lblPreco7.setText("R$"+l.getValor()+"0");
                     btnAdd7.setVisible(true);
                     btnRem7.setVisible(true);
                     txtQuant7.setVisible(true);
@@ -136,7 +136,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente8.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente8.setVisible(true);
                     lblPreco8.setVisible(true);
-                    lblPreco8.setText(l.getNome());
+                    lblPreco8.setText("R$"+l.getValor()+"0");
                     btnAdd8.setVisible(true);
                     btnRem8.setVisible(true);
                     txtQuant8.setVisible(true);
@@ -147,7 +147,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente9.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente9.setVisible(true);
                     lblPreco9.setVisible(true);
-                    lblPreco9.setText(l.getNome());
+                    lblPreco9.setText("R$"+l.getValor()+"0");
                     btnAdd9.setVisible(true);
                     btnRem9.setVisible(true);
                     txtQuant9.setVisible(true);
@@ -158,7 +158,7 @@ public class TelaAddRemIngrediente extends javax.swing.JFrame {
                     lblIngrediente10.setText(l.getId() + " - " + l.getNome());
                     lblIngrediente10.setVisible(true);
                     lblPreco10.setVisible(true);
-                    lblPreco10.setText(l.getNome());
+                    lblPreco10.setText("R$"+l.getValor()+"0");
                     btnAdd10.setVisible(true);
                     btnRem10.setVisible(true);
                     txtQuant10.setVisible(true);
